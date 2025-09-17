@@ -1,9 +1,48 @@
 <aside>
   <ul>
     <li><a href="/gabocode-website/reference/variables">Variables</a></li>
+    <li><a href="/gabocode-website/reference/condicionales">Estructuras condicionales</a></li>
   </ul>
 </aside>
 
 <style>
-  /* Some awesome styles */
+  aside {
+    position: sticky;
+    height: 640px;
+    border: solid black 1px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    height: 100%;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    transition: 100ms;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  a {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    color: inherit;
+    text-align: center;
+    padding: 8px;
+  }
+
+  a:hover {
+    color: blue;
+  }
 </style>
