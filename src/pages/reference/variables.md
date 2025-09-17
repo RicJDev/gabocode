@@ -3,7 +3,7 @@ layout: ../../layouts/ReferenceLayout.astro
 ---
 ## Sintaxis general y tipos de datos
 
-```
+```gabo
 Algoritmo Variables y tipos
 Inicio
   // Todos los algoritmos incluyen un Inicio.
@@ -40,7 +40,7 @@ Fin
 
 ## Operaciones matematicas
 
-```
+```gabo
   var suma, resta, multiplicacion, division, modulo, potencia: Real;
 
   // Esta es la sintaxis que maneja el lenguaje para ejecutar estas operaciones matematicas
@@ -62,7 +62,7 @@ Fin
 
 ## Agrupamiento
 
-```
+```gabo
   var a, b, c, d: Entero
 
   a = 1 + 2 * 3
@@ -84,7 +84,7 @@ Desarrolle un algoritmo que solicite el nombre de un empleado, la cantidad de ho
 
 **Solución**:
 
-```
+```gabo
 Algoritmo salario
 Inicio
   var nombre: Cadena;
