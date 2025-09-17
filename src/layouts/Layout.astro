@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 ---
 
 <!doctype html>
@@ -25,6 +26,7 @@ import Header from '../components/Header.astro'
     <div class="container">
       <Header />
       <slot />
+      <Footer />
     </div>
   </body>
 </html>
@@ -34,12 +36,13 @@ import Header from '../components/Header.astro'
     flex-direction: column;
     display: flex;
     align-items: center;
-    max-width: 680px;
     margin: auto;
+    padding: 0;
+    width: 90vw;
   }
 
   pre {
-    width: 100%;
+    width: 768px;
     padding: 32px;
     border-radius: 8px;
   }
@@ -47,6 +50,7 @@ import Header from '../components/Header.astro'
   html,
   body {
     margin: 0;
+    font-size: 16px;
     font-family:
       system-ui,
       -apple-system,
@@ -59,5 +63,9 @@ import Header from '../components/Header.astro'
       'Open Sans',
       'Helvetica Neue',
       sans-serif;
+  }
+
+  p {
+    text-align: left;
   }
 </style>

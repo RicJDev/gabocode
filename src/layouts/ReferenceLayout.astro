@@ -1,11 +1,31 @@
 ---
 import ReferenceNav from '../components/ReferenceNav.astro'
 import Layout from './Layout.astro'
-
-import Code from 'astro:components'
 ---
 
 <Layout>
-  <ReferenceNav />
-  <slot />
+  <div class="reference-container">
+    <ReferenceNav />
+    <main>
+      <slot />
+    </main>
+  </div>
 </Layout>
+
+<style>
+  .reference-container {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 192px 1fr;
+    gap: 32px;
+    width: 100%;
+  }
+
+  main {
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    text-align: left;
+  }
+</style>
