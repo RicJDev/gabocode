@@ -1,7 +1,20 @@
+---
+const referenceList = [
+  ['variables', 'Variables'],
+  ['condicionales', 'Estructuras condicionales'],
+  ['en_caso', 'Estructura condicional especial: En_Caso'],
+]
+---
+
 <aside>
   <ul>
-    <li><a href="/gabocode-website/reference/variables">Variables</a></li>
-    <li><a href="/gabocode-website/reference/condicionales">Estructuras condicionales</a></li>
+    {
+      referenceList.map(([filename, linkText]) => (
+        <li>
+          <a href={`/gabocode-website/reference/${filename}`}>{linkText}</a>
+        </li>
+      ))
+    }
   </ul>
 </aside>
 
