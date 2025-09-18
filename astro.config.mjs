@@ -17,7 +17,7 @@ export default defineConfig({
           patterns: [
             {
               match:
-                '\\b(?i:(Algoritmo|Inicio|Registro|Fin_Registro|Fin|Si|Fin_Si|En_Caso|Fin_Caso|Fin_Funcion|Fin_Procedimiento|Mientras|Fin_Mientras|Para|Fin_Para|Repetir|Fin_Repetir|Var|Mostrar|Leer|And|Or|Entonces|Sino|Hasta|Devolver|Hacer|Caso|Sea|Mod))\\b',
+                '\\b(?i:(Algoritmo|Inicio|Registro|Fin_Registro|Fin|Si|Fin_Si|En_Caso|Otro_Caso|Fin_Caso|Fin_Funcion|Fin_Procedimiento|Mientras|Fin_Mientras|Para|Fin_Para|Repetir|Fin_Repetir|Var|Mostrar|Leer|And|Or|Entonces|Sino|Hasta|Devolver|Hacer|Caso|Sea|Mod))\\b',
               name: 'keyword.gabo',
             },
             {
