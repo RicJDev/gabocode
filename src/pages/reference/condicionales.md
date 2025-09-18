@@ -9,7 +9,7 @@ Esta estructura nos permite actuar tomando decisiones.
 
 ### Simple
 
-```
+```gabo
 Si (<condicion>) Entonces;
   // Esto se ejecuta si la condicion es cierta
 
@@ -19,7 +19,7 @@ Fin_Si
 
 ### Doble
 
-```
+```gabo
 Si (<condicion 1>) Entonces;
   // Esto se ejecuta si la condicion 1 es cierta
 
@@ -32,7 +32,7 @@ Fin_Si
 
 ### Multiple
 
-```
+```gabo
 Si (<condicion 1>) Entonces;
   // Esto se ejecuta si la condicion 1 es cierta
 
@@ -63,22 +63,22 @@ Estos son simbolos que permiten obtener valores de verdad (verdadero o falso) al
 
 Permiten hacer combinaciones de valores de verdad.
 
-```
-  var a, b: Booleano;
+```gabo
+var a, b: Booleano;
 
-  a = 1;
-  b = 1;
+a = 1;
+b = 1;
 
-  Si (a And b) Entonces;
-    Mostrar << "a y b son verdaderas";
-  Fin_Si
+Si (a And b) Entonces;
+  Mostrar << "a y b son verdaderas";
+Fin_Si
 
-  a = 1;
-  b = 0;
+a = 1;
+b = 0;
 
-  Si (a Or b) Entonces;
-    Mostrar << "a o b son verdaderas";
-  Fin_Si
+Si (a Or b) Entonces;
+  Mostrar << "a o b son verdaderas";
+Fin_Si
 ```
 Estan muy relacionados a la tabla de la verdad:
 
@@ -95,65 +95,65 @@ Donde `1` es verdadero y `0` es falso.
 
 **Mayor que y menor que**
 
-```
-  var a, b: Entero;
+```gabo
+var a, b: Entero;
 
-  a = 1;
-  b = 3;
+a = 1;
+b = 3;
 
-  Si (a > b) Entonces;
-    Mostrar << "a es mayor que b";
+Si (a > b) Entonces;
+  Mostrar << "a es mayor que b";
 
-    Sino
-      Mostrar << "a no es mayor que b";
-  Fin_Si
+  Sino
+    Mostrar << "a no es mayor que b";
+Fin_Si
 
-  Si (a < b) Entonces;
-    Mostrar << "a es menor que b";
+Si (a < b) Entonces;
+  Mostrar << "a es menor que b";
 
-    Sino
-      Mostrar << "a no es menor que b";
-  Fin_Si
+  Sino
+    Mostrar << "a no es menor que b";
+Fin_Si
 ```
 **Igualdad y desigualdad**
 
-```
-  var a, b, c: Entero;
+```gabo
+var a, b, c: Entero;
 
-  a = 2;
-  b = 3;
-  c = b;
+a = 2;
+b = 3;
+c = b;
 
-  // Aca usamos `=` aunque es mas usual `==` o `===`
-  Si (a = c) Entonces;
-    Mostrar << "a es igual a b";
-  Fin_Si
+// Aca usamos `=` aunque es mas usual `==` o `===`
+Si (a = c) Entonces;
+  Mostrar << "a es igual a b";
+Fin_Si
 
-  Si (a != b) Entonces;
-    Mostrar << "a es desigual a b";
-  Fin_Si
+Si (a != b) Entonces;
+  Mostrar << "a es desigual a b";
+Fin_Si
 ```
 **Mayor o igual que y menor o igual que**
 
-```
-  var a, b: Entero;
+```gabo
+var a, b: Entero;
 
-  a = 3;
-  b = 4;
+a = 3;
+b = 4;
 
-  Si (a >= b) Entonces;
-    Mostrar << "a es mayor o igual que b";
+Si (a >= b) Entonces;
+  Mostrar << "a es mayor o igual que b";
 
-    Sino
-      Mostrar << "a no es mayor o igual que b";
-  Fin_Si
+  Sino
+    Mostrar << "a no es mayor o igual que b";
+Fin_Si
 
-  Si (a <= b) Entonces;
-    Mostrar << "a es menor o igual que b";
+Si (a <= b) Entonces;
+  Mostrar << "a es menor o igual que b";
 
-    Sino
-      Mostrar << "a no es menor o igual que b";
-  Fin_Si
+  Sino
+    Mostrar << "a no es menor o igual que b";
+Fin_Si
 ```
 
 ## Trabajando con condicionales
@@ -170,46 +170,46 @@ Y ahora veremos como seria nuestro `Algoritmo Calculadora`. Notese que hay opera
 
 Te enfocas en lo que quieres que sea verdadero, bueno o valido
 
-```
-  var indice: Entero;
-  var radicando, resultado: Real;
+```gabo
+var indice: Entero;
+var radicando, resultado: Real;
 
-  Mostrar << "Ingrese el indice de la raiz";
-  Leer >> indice;
-  Mostrar << "Ingrese el radicando de la raiz";
-  Leer >> radicando;
+Mostrar << "Ingrese el indice de la raiz";
+Leer >> indice;
+Mostrar << "Ingrese el radicando de la raiz";
+Leer >> radicando;
 
-  Si (indice >= 1 And radicando >= 0) Entonces;
-    resultado = radicando ^ (1 / indice);
+Si (indice >= 1 And radicando >= 0) Entonces;
+  resultado = radicando ^ (1 / indice);
 
-    Mostrar << "La raiz es igual a ", resultado;
+  Mostrar << "La raiz es igual a ", resultado;
 
-    Sino
-      Mostrar << "Datos no validos para la operacion";
-  Fin_Si
+  Sino
+    Mostrar << "Datos no validos para la operacion";
+Fin_Si
 ```
 
 ### Camino Triste :(
 
 Te enfocas en lo que puede que sea falso, malo o invalido
 
-```
-  var indice: Entero;
-  var radicando, resultado: Real;
+```gabo
+var indice: Entero;
+var radicando, resultado: Real;
 
-  Mostrar << "Ingrese el indice de la raiz";
-  Leer >> indice;
-  Mostrar << "Ingrese el radicando de la raiz";
-  Leer >> radicando;
+Mostrar << "Ingrese el indice de la raiz";
+Leer >> indice;
+Mostrar << "Ingrese el radicando de la raiz";
+Leer >> radicando;
 
-  Si (indice < 1 Or radicando < 0) Entonces;
-    Mostrar << "Datos no validos para la operacion";
+Si (indice < 1 Or radicando < 0) Entonces;
+  Mostrar << "Datos no validos para la operacion";
 
-    Sino
-      resultado = radicando ^ (1 / indice);
+  Sino
+    resultado = radicando ^ (1 / indice);
 
-      Mostrar << "La raiz es igual a ", resultado;
-  Fin_Si
+    Mostrar << "La raiz es igual a ", resultado;
+Fin_Si
 ```
 
 ### Ejercicio de los dados
@@ -222,8 +222,8 @@ Se necesita un algoritmo que solicite los numeros de tres dados y muestre un men
 
 Esto solo debe realizarse con datos previamente validados. En caso de haber datos invalidos, notificar al usuario y finalizar el programa
 
-```
-Algoritmo Armemos un casino y hagamonos ricos
+```gabo
+Algoritmo Armemos_un_casino_y_hagamonos_ricos
 Inicio
   var dado1, dado2, dado3: Entero;
 
@@ -259,8 +259,8 @@ Fin
 
 Desarrolle un algoritmo que aplique un 10% de descuento en la compra de un usuario, en caso de poseer carnet de membresia. No olvide solicitar el nombre del mismo y validar el monto de la compra
 
-```
-Algoritmo Golden Member
+```gabo
+Algoritmo Golden_Member
 Inicio
   var nombre: Cadena;
   var tiene_carnet: Booleano;
