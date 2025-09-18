@@ -5,7 +5,7 @@ title: Gabocode | Variables
 ## Sintaxis general y tipos de datos
 
 ```gabo
-Algoritmo Variables y tipos
+Algoritmo Variables_y_tipos
 Inicio
   // Todos los algoritmos incluyen un Inicio.
   // Esto es un comentario. Te permite dar informacion a quien lea el codigo
@@ -42,39 +42,39 @@ Fin
 ## Operaciones matematicas
 
 ```gabo
-  var suma, resta, multiplicacion, division, modulo, potencia: Real;
+var suma, resta, multiplicacion, division, modulo, potencia: Real;
 
-  // Esta es la sintaxis que maneja el lenguaje para ejecutar estas operaciones matematicas
+// Esta es la sintaxis que maneja el lenguaje para ejecutar estas operaciones matematicas
 
-  suma = 1 + 2;
-  resta = 3 - 1;
-  multiplicacion = 2 * 4;
-  division = 4 / 2;
-  modulo = 10 MOD 2;
-  potencia = 3 ^ 4;
+suma = 1 + 2;
+resta = 3 - 1;
+multiplicacion = 2 * 4;
+division = 4 / 2;
+modulo = 10 MOD 2;
+potencia = 3 ^ 4;
 
-  Mostrar << "La suma de 1 y 2: ", suma; // muestra 3
-  Mostrar << "La diferencia entre 3 y 1: ", resta; // muestra 2
-  Mostrar << "El producto de 2 por 4: ", multiplicacion; // muestra 8
-  Mostrar << "El cociente de 4 entre 2: ", division; // muestra 2
-  Mostrar << "El modulo de 10 entre 2: ", modulo; // muestra 0
-  Mostrar << "Potencia de 3 elevado a 4: ", potencia; // muestra 81
+Mostrar << "La suma de 1 y 2: ", suma; // muestra 3
+Mostrar << "La diferencia entre 3 y 1: ", resta; // muestra 2
+Mostrar << "El producto de 2 por 4: ", multiplicacion; // muestra 8
+Mostrar << "El cociente de 4 entre 2: ", division; // muestra 2
+Mostrar << "El modulo de 10 entre 2: ", modulo; // muestra 0
+Mostrar << "Potencia de 3 elevado a 4: ", potencia; // muestra 81
 ```
 
 ## Agrupamiento
 
 ```gabo
-  var a, b, c, d: Entero
+var a, b, c, d: Entero
 
-  a = 1 + 2 * 3
-  b = (1 + 2) * 3
-  c = (a + b) * 3 ^ 2
-  d = [(a + b) * 3] ^ 2
+a = 1 + 2 * 3
+b = (1 + 2) * 3
+c = (a + b) * 3 ^ 2
+d = [(a + b) * 3] ^ 2
 
-  Mostrar << "1 + 2 * 3 = "  a; // 7
-  Mostrar << "(1 + 2) * 3 = ", b; // 9
-  Mostrar << "(", a, "+",  b, ") * 3 ^ 2 = ", c; // 144
-  Mostrar << "[(", a, "+", b, ") * 3] ^ 2 = ", d; // 2304
+Mostrar << "1 + 2 * 3 = "  a; // 7
+Mostrar << "(1 + 2) * 3 = ", b; // 9
+Mostrar << "(", a, "+",  b, ") * 3 ^ 2 = ", c; // 144
+Mostrar << "[(", a, "+", b, ") * 3] ^ 2 = ", d; // 2304
 ```
 
 ## Ejemplo con ejercicio basico
