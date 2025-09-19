@@ -1,27 +1,18 @@
 ---
-import ReferenceNav from '../components/ReferenceNav.astro'
+import ReferenceIndex from '../components/ReferenceIdex.astro'
 import Layout from './Layout.astro'
 ---
 
 <Layout>
-  <div class="reference-container">
-    <ReferenceNav />
-    <main>
+  <ReferenceIndex />
+    <article>
       <slot />
-    </main>
-  </div>
+    </article>
 </Layout>
 
 <style>
-  .reference-container {
-    margin-top: 16px;
-    display: grid;
-    grid-template-columns: 192px 1fr;
-    gap: 32px;
-    width: 100%;
-  }
-
-  main {
+  article {
+    max-width: 640px;
     padding: 0 32px;
     display: flex;
     flex-direction: column;
