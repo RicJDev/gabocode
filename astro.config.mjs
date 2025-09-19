@@ -6,7 +6,7 @@ import react from '@astrojs/react'
 export default defineConfig({
   integrations: [react()],
   site: 'https://ricjdev.github.io/',
-  base: '/gabocode-website',
+  base: '/gabocode',
 
   markdown: {
     shikiConfig: {
