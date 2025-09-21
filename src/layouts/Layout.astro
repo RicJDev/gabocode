@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro'
-// import Footer from '../components/Footer.astro'
+import Footer from '../components/Footer.astro'
+import ReferenceIdex from '../components/ReferenceIdex.astro'
 ---
 
 <!doctype html>
@@ -27,8 +28,10 @@ import Header from '../components/Header.astro'
     <div class="container">
       <Header />
         <main>
+          <ReferenceIdex />
           <slot />
         </main>
+      <Footer />
     </div>
   </body>
 </html>
@@ -56,6 +59,12 @@ import Header from '../components/Header.astro'
     padding: 16px;
     border-radius: 8px;
     margin: 16px 0;
+  }
+
+  @media (width <= 768px) {
+    pre {
+      width: 512px;
+    }
   }
 
   *,
