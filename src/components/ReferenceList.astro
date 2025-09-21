@@ -1,5 +1,15 @@
+---
+import Close from '../assets/close.svg'
+
+---
+
 <aside>
   <ul>
+    <li>
+      <button class="close-list" onclick="closeSidebar()">
+        <Close width={32} height={32} />
+      </button>
+    </li>
     <li><a href="/gabocode/referencia/variables">Variables</a></li>
     <li><a href="/gabocode/referencia/condicionales">Estructuras condicionales</a></li>
     <li><a href="/gabocode/referencia/en_caso">Estructura condicional especial: En_Caso</a></li>
@@ -7,6 +17,12 @@
 </aside>
 
 <style>
+  .close-list {
+    display: none;
+    width: fit-content;
+    height: fit-content;
+  }
+
   aside {
     width: 192px;
     height: 100%;
@@ -43,11 +59,21 @@
     color: blue;
   }
 
-  @media (width <= 750px) {
+  @media (width <= 768px) {
     aside {
       position: fixed;
       top: 0;
       right: -100%;
+      z-index: 10;
+      transition: right 300ms ease-out;
+    }
+
+    aside.show {
+      right: 0;
+    }
+
+    .close-list {
+      display: block;
     }
   }
 </style>
