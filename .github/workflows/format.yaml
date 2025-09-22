@@ -25,5 +25,6 @@ jobs:
         uses: creyD/prettier_action@v4.6
         with:
           allow_other_plugins: true
-          prettier_options: "--config .prettierrc"
+          prettier_options: "--config .prettierrc --write {**/*,*}.{js,html,json,md,yml,css,astro}"
+          file_pattern: "."
           prettier_plugins: "prettier-plugin-astro"
