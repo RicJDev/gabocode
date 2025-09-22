@@ -2,6 +2,7 @@
 layout: ../../layouts/ReferenceLayout.astro
 title: Gabocode | En_Caso
 ---
+
 ## Estructura `En_Caso`
 
 Esta estructura sirve para evaluar múltiples valores para una variable. Pero dado a que estamos trabando con una sintaxis diseñada por el profesor, hay algunas consideraciones de las que me gustaría hablar, ya que su sintaxis no se ajusta por completo a cómo funciona esta estructura en la mayoría de lenguajes
@@ -104,6 +105,7 @@ Esto sigue siendo pseudo código. La sintaxis puedes ajustarla cómo necesites s
 Recordemos el ejercicio de los Dados.
 
 Se necesita un algoritmo que solicite los numeros de tres dados y muestre un mensaje dependiendo de la cantidad de 6 obtenidos:
+
 - 6 en los tres dados: "Excelente"
 - 6 en dos dados: "Muy bien"
 - 6 en un solo dado: "Regular"
@@ -122,7 +124,7 @@ Inicio
   Leer >> dado2;
   Mostrar << "Ingrese el dado 3";
   Leer >> dado3;
-  
+
   En_Caso (dado1 > 0) AND (dado2 > 0) AND (dado3 > 0) Sea;
     Caso (dado1 = 6) AND (dado2 = 6) AND (dado3 = 6);
       Mostrar << "Excelente";
@@ -135,4 +137,3 @@ Inicio
   Fin_Caso
 Fin
 ```
-

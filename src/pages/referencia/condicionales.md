@@ -80,14 +80,15 @@ Si (a Or b) Entonces;
   Mostrar << "a o b son verdaderas";
 Fin_Si
 ```
+
 Estan muy relacionados a la tabla de la verdad:
 
-| a | b | a And b | a Or b |
-|---|---|---------|--------|
-| 1 | 1 |    1    |   1    |
-| 1 | 0 |    0    |   1    |
-| 0 | 1 |    0    |   1    |
-| 0 | 0 |    0    |   0    |
+| a   | b   | a And b | a Or b |
+| --- | --- | ------- | ------ |
+| 1   | 1   | 1       | 1      |
+| 1   | 0   | 0       | 1      |
+| 0   | 1   | 0       | 1      |
+| 0   | 0   | 0       | 0      |
 
 Donde `1` es verdadero y `0` es falso.
 
@@ -115,6 +116,7 @@ Si (a < b) Entonces;
     Mostrar << "a no es menor que b";
 Fin_Si
 ```
+
 **Igualdad y desigualdad**
 
 ```gabo
@@ -133,6 +135,7 @@ Si (a != b) Entonces;
   Mostrar << "a es desigual a b";
 Fin_Si
 ```
+
 **Mayor o igual que y menor o igual que**
 
 ```gabo
@@ -215,10 +218,11 @@ Fin_Si
 ### Ejercicio de los dados
 
 Se necesita un algoritmo que solicite los numeros de tres dados y muestre un mensaje dependiendo de la cantidad de 6 obtenidos:
-   - 6 en los tres dados: "Excelente"
-   - 6 en dos dados: "Muy bien"
-   - 6 en un solo dado: "Regular"
-   - Ningun 6: "Pesimo"
+
+- 6 en los tres dados: "Excelente"
+- 6 en dos dados: "Muy bien"
+- 6 en un solo dado: "Regular"
+- Ningun 6: "Pesimo"
 
 Esto solo debe realizarse con datos previamente validados. En caso de haber datos invalidos, notificar al usuario y finalizar el programa
 
@@ -282,7 +286,7 @@ Inicio
       Mostrar << "Monto de la compra: ", monto_compra;
       Mostrar << "Monto a pagar: ", monto_final;
 
-      Sino 
+      Sino
         Mostrar << "El usuario ", nombre, " no es miembro. No se le ha aplicado ningun descuento";
         Mostrar << "Monto a pagar: ", monto_compra;
     Fin_Si

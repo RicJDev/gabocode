@@ -29,22 +29,28 @@ import ReferenceList from '../components/ReferenceList.astro'
   <body>
     <div class="container">
       <Header />
-        <main>
-          <button class="open-list" onclick="openSideBar()">
-            <Burger width={32} height={32}/>
-          </button>
-          <ReferenceList />
-          <slot />
-        </main>
+      <main>
+        <button
+          class="open-list"
+          onclick="openSideBar()"
+        >
+          <Burger
+            width={32}
+            height={32}
+          />
+        </button>
+        <ReferenceList />
+        <slot />
+      </main>
       <Footer />
     </div>
 
     <script>
-      function openSideBar() { 
-        window.alert("Epa, chamo")
+      function openSideBar() {
+        window.alert('Epa, chamo')
       }
 
-      function closeSideBar() { }
+      function closeSideBar() {}
     </script>
   </body>
 </html>
@@ -93,6 +99,5 @@ import ReferenceList from '../components/ReferenceList.astro'
     .open-list {
       display: block;
     }
-
   }
 </style>

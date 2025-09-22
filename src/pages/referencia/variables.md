@@ -2,6 +2,7 @@
 layout: ../../layouts/ReferenceLayout.astro
 title: Gabocode | Variables
 ---
+
 ## Sintaxis general y tipos de datos
 
 ```gabo
@@ -17,9 +18,9 @@ Inicio
   var numero_real: Real;
   var numero_entero: Entero;
   var mi_caracter: Caracter;
-  
+
   // Puedes declarar varias variables del mismo tipo separandolas por coma
-  var mi_cadena_de_texto, nombre: Cadena; 
+  var mi_cadena_de_texto, nombre: Cadena;
   var mi_booleano: Booleano;
 
   // Con el operador `=` puedes asignar valores a las variables
@@ -30,7 +31,7 @@ Inicio
   mi_booleano = 1;
 
   // Asi se muestra un mensaje por pantalla
-  Mostrar << "Este es un mensaje sumamente importante"; 
+  Mostrar << "Este es un mensaje sumamente importante";
 
   // Asi se almacena la entrada de un usuario en una variable
   Mostrar << "Ingrese su nombre";
