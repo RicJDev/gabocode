@@ -14,6 +14,13 @@ jobs:
           # This is important to fetch the changes to the previous commit
           fetch-depth: 0
 
+      - name: Install Astro Plugin
+        uses: actions/setup-node@v5
+        with:
+          node-version: 'latest'
+
+      - run: npm install -D prettier-plugin-astro
+
       - name: Prettier Action
         uses: creyD/prettier_action@v4.6
         with:
