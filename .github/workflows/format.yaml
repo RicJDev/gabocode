@@ -18,5 +18,4 @@ jobs:
         uses: creyD/prettier_action@v4.6
         with:
           prettier_options: "--config .prettierrc"
-          prettier_plugins:
-            - "prettier-plugin-astro"
+          prettier_plugins: "prettier-plugin-astro"
