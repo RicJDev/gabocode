@@ -1,5 +1,14 @@
+---
+import Close from '../../assets/close.svg'
+---
+
 <nav>
   <ul>
+    <li class="close">
+      <button>
+        <Close height={32} width={32} />
+      </button>
+    </li>
     <li><a href="/gabocode/referencia">Referencia</a></li>
     <li><a href="/gabocode/ejercicios">Ejercicios</a></li>
     <li><a href="/gabocode/sugerir-cambios">Sugerir cambios</a></li>
@@ -8,6 +17,11 @@
 </nav>
 
 <style>
+  .close {
+    display: none;
+    size: fit-content;
+  }
+
   ul {
     display: flex;
     flex-direction: row;
@@ -31,8 +45,19 @@
   }
 
   @media (width <= 768px) {
+    .close {
+      display: block;
+    }
+
     ul {
       flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 10;
     }
   }
 </style>
