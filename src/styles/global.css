@@ -13,16 +13,23 @@ body {
     sans-serif;
 }
 
+h2 > code, h3 > code, p > code {
+  background: #ccc;
+  color: #222;
+  padding: 4px;
+  border-radius: 4px;
+}
+
 pre {
-  width: 768px;
+  max-width: 768px;
   padding: 16px;
   font-size: 16px;
   border-radius: 8px;
-  margin: 16px 0;
 }
 
 @media (width <= 768px) {
   pre {
-    width: 512px;
+    font-size: 12px;
+    max-width: 384px;
   }
 }
