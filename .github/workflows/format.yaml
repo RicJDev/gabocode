@@ -1,7 +1,9 @@
 name: Format
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - dev
 
 jobs:
   prettier:
@@ -12,23 +14,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          # Make sure the actual branch is checked out when running on pull requests
           ref: ${{ github.head_ref }}
-          # This is important to fetch the changes to the previous commit
           fetch-depth: 0
 
-      - name: Install Astro Plugin
-        uses: actions/setup-node@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 'latest'
 
-      - run: npm install -D prettier-plugin-astro
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install Astro Plugin with pnpm
+        run: pnpm add -D prettier-plugin-astro
 
       - name: Prettier Action
         uses: creyD/prettier_action@v4.6
         with:
           allow_other_plugins: true
-          prettier_options: "--config .prettierrc --write {**/*,*}.{js,html,json,md,yml,css,astro} --ignore-path .prettierignore"
+          prettier_options: "--config .prettierrc --write {**/*,*}.{js,html,json,md,css,astro,jsx} --ignore-path .prettierignore"
           file_pattern: "."
           prettier_plugins: "prettier-plugin-astro"
           github_token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
