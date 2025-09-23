@@ -1,7 +1,7 @@
 ---
 import Nav from './Nav.astro'
 import Links from './Links.astro'
-import Burger from '../../assets/hamburger.svg'
+import {IconMenu2 as Burger} from '@tabler/icons-react'
 ---
 
 <header>
@@ -10,10 +10,7 @@ import Burger from '../../assets/hamburger.svg'
   </a>
 
   <button class="burger">
-    <Burger
-      width={32}
-      height={32}
-    />
+    <Burger />
   </button>
 
   <Nav />
