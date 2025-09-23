@@ -2,10 +2,10 @@
 import Close from '../../assets/close.svg'
 ---
 
-<nav>
+<nav class="main-nav">
   <ul>
     <li class="close">
-      <button>
+      <button class="close-button">
         <Close height={32} width={32} />
       </button>
     </li>
@@ -50,14 +50,23 @@ import Close from '../../assets/close.svg'
     }
 
     ul {
+      background: inherit;
       flex-direction: column;
     }
 
-    nav {
+    .main-nav {
+      background: white;
+      padding: 32px;
+      border-radius: 4px;
       position: fixed;
       top: 0;
       right: -100%;
       z-index: 10;
+      transition: right 300ms ease-out;
+    }
+
+    .oppened {
+      right: 0;
     }
   }
 </style>
