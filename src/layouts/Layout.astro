@@ -27,12 +27,19 @@ import Footer from '../components/Footer.astro'
 
   <body>
     <Header />
-      <slot />
+      <div class="content">
+        <slot />
+      </div>
     <Footer />
   </body>
 </html>
 
 <style>
+  .content {
+    margin-top: 128px;
+    min-height: 80vh;
+  }
+
   body {
     display: grid;
     grid-template-rows: auto 1fr auto;
