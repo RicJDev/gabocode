@@ -1,5 +1,7 @@
 ---
 import Close from '../assets/close.svg'
+const matches = import.meta.glob('../pages/referencia/*.md', { eager: true})
+const posts = Object.values(matches)
 ---
 
 <aside>
@@ -15,9 +17,13 @@ import Close from '../assets/close.svg'
         />
       </button>
     </li>
-    <li><a href="/gabocode/referencia/variables">Variables</a></li>
-    <li><a href="/gabocode/referencia/condicionales">Estructuras condicionales</a></li>
-    <li><a href="/gabocode/referencia/en_caso">Estructura condicional especial: En_Caso</a></li>
+    { posts.map((post) =>(
+    <li>
+      <a href={post?.url}>{post.frontmatter.title}</a>
+    </li>
+    ))
+
+    }
   </ul>
 </aside>
 
