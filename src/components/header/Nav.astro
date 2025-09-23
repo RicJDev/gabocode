@@ -1,0 +1,66 @@
+---
+import Close from '../../assets/close.svg'
+---
+
+<nav>
+  <ul>
+    <li class="close">
+      <button>
+        <Close
+          height={32}
+          width={32}
+        />
+      </button>
+    </li>
+    <li><a href="/gabocode/referencia">Referencia</a></li>
+    <li><a href="/gabocode/ejercicios">Ejercicios</a></li>
+    <li><a href="/gabocode/sugerir-cambios">Sugerir cambios</a></li>
+    <li><a href="/gabocode/autor">Sobre el autor</a></li>
+  </ul>
+</nav>
+
+<style>
+  .close {
+    display: none;
+    size: fit-content;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    margin-block: 0;
+    padding: 0;
+    gap: 16px;
+  }
+
+  li {
+    display: block;
+    padding: 0;
+    margin-inline: 0;
+    margin: 0;
+  }
+
+  a {
+    display: block;
+    padding: 16px;
+    border: solid black 1px;
+    max-width: 240px;
+  }
+
+  @media (width <= 768px) {
+    .close {
+      display: block;
+    }
+
+    ul {
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 10;
+    }
+  }
+</style>

@@ -1,15 +1,23 @@
 ---
-import '../styles/references.css'
 import Layout from './Layout.astro'
+import ReferenceList from '../components/ReferenceList.astro'
 ---
 
 <Layout>
-  <article>
-    <slot />
-  </article>
+  <main>
+    <ReferenceList />
+    <article>
+      <slot />
+    </article>
+  </main>
 </Layout>
 
 <style>
+  main {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
   article {
     max-width: 768px;
     padding: 0 32px;

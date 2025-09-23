@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/ReferenceLayout.astro
+layout: ../../layouts/Reference.astro
 title: Gabocode | Estructuras condicionales
 ---
 
