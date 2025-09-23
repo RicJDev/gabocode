@@ -1,6 +1,6 @@
 ---
 import Close from '../assets/close.svg'
-const matches = import.meta.glob('../pages/referencia/*.md', { eager: true})
+const matches = import.meta.glob('../pages/referencia/*.md', { eager: true })
 const posts = Object.values(matches)
 ---
 
@@ -17,12 +17,12 @@ const posts = Object.values(matches)
         />
       </button>
     </li>
-    { posts.map((post) =>(
-    <li>
-      <a href={post?.url}>{post.frontmatter.title}</a>
-    </li>
-    ))
-
+    {
+      posts.map((post) => (
+        <li>
+          <a href={post?.url}>{post.frontmatter.title}</a>
+        </li>
+      ))
     }
   </ul>
 </aside>

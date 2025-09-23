@@ -14,7 +14,9 @@ body {
     sans-serif;
 }
 
-h2 > code, h3 > code, p > code {
+h2 > code,
+h3 > code,
+p > code {
   font-size: inherit;
   background: #ccc;
   color: #222;
