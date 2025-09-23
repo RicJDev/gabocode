@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Reference.astro
-title: Gabocode | En_Caso
+title: En_Caso
 ---
 
 ## Estructura `En_Caso`
@@ -12,25 +12,25 @@ Esta estructura sirve para evaluar múltiples valores para una variable. Pero da
 Esta sería una sintaxis más real.
 
 ```gabo
-  En_Caso (<variable>) Sea;
-    Caso(<valor 1>);
-      // Instrucciones para el valor 1
+En_Caso (<variable>) Sea;
+  Caso(<valor 1>);
+    // Instrucciones para el valor 1
 
-    Caso(<valor 2>);
-      // Instrucciones para el valor 2
+  Caso(<valor 2>);
+    // Instrucciones para el valor 2
 
-    Caso(<valor 3>);
-      // Instrucciones para el valor 3
+  Caso(<valor 3>);
+    // Instrucciones para el valor 3
 
-    ...
+  ...
 
-    Caso(<valor n>);
-      // Instrucciones para el valor n
+  Caso(<valor n>);
+    // Instrucciones para el valor n
 
-    Otro_Caso
-      // Instrucciones por defecto
-      // Se ejecuta si el valor de la variable no coincide con ninguno de valores anteriores
-  Fin_Caso
+  Otro_Caso
+    // Instrucciones por defecto
+    // Se ejecuta si el valor de la variable no coincide con ninguno de valores anteriores
+Fin_Caso
 ```
 
 Puesto en un ejemplo, sería así:
