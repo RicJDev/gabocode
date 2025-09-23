@@ -1,6 +1,6 @@
 ---
-layout: ../layouts/ReferenceLayout.astro
-title: Gabocode | Variables
+layout: ../layouts/Layout.astro
+title: Gabocode
 ---
 
 ## Referencia del Gabocode
