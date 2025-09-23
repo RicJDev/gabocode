@@ -7,32 +7,7 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
     <li class="close-button">
       <button>
         <Close />
-        <Close />
       </button>
-    </li>
-    <li>
-      <a href="/gabocode/referencia">
-        <IconBook />
-        <span> Referencia </span>
-      </a>
-    </li>
-    <li>
-      <a href="/gabocode/ejercicios">
-        <IconBarbell />
-        <span> Ejercicios </span>
-      </a>
-    </li>
-    <li>
-      <a href="/gabocode/sugerir-cambios">
-        <IconQuestionMark />
-        <span> Sugerir cambios </span>
-      </a>
-    </li>
-    <li>
-      <a href="/gabocode/autor">
-        <IconUser />
-        <span> Sobre el autor </span>
-      </a>
     </li>
     <li>
       <a href="/gabocode/referencia">
@@ -111,6 +86,16 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
     a {
       font-size: 12px;
     }
+    display: block;
+    padding: 16px;
+    max-width: 240px;
+    text-align: center;
+
+    transition: background ease-in-out 200ms;
+  }
+
+  a:hover {
+    background: #ccf;
   }
 
   @media (width <= 768px) {
