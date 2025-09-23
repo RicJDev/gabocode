@@ -14,15 +14,22 @@ import ReferenceList from '../components/ReferenceList.astro'
 
 <style>
   main {
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
+    flex-direction: row;
   }
 
   article {
+    padding: 32px;
     max-width: 768px;
-    padding: 0 48px;
     display: flex;
     flex-direction: column;
     text-align: left;
+    margin: auto;
+  }
+
+  @media (width <= 768px) {
+    article {
+      max-width: 95vw;
+    }
   }
 </style>
