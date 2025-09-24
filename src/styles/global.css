@@ -67,6 +67,25 @@ h3 {
   margin: 32px 0;
 }
 
+h2 {
+  align-self: center;
+}
+
+h2,
+h3,
+h4 {
+  width: fit-content;
+  margin: 16px 0;
+  padding: 4px 0;
+  border-bottom: 1px gray solid;
+}
+
+blockquote,
+p {
+  margin: 12px 0;
+}
+
+li > code,
 h2 > code,
 h3 > code,
 p > code {
@@ -90,3 +109,18 @@ pre {
   width: 100%;
 }
 
+pre {
+  font-family: 'Monaspace-Argon';
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 12px 0;
+  width: 100%;
+}
+
+@media (width <= 768px) {
+  pre {
+    font-size: 12px;
+
+  }
+}
