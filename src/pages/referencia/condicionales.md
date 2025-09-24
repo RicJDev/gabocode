@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Reference.astro
 title: Estructuras condicionales
-index: 2
+index: 3
 ---
 
 ## Estructura condicional `Si-Entonces`

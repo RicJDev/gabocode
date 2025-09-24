@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Reference.astro
 title: Variables
-index: 1
+index: 2
 ---
 
 ## Sintaxis general y tipos de datos
