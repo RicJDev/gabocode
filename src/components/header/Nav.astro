@@ -41,13 +41,16 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
 <style>
   .close-button {
     display: none;
-    size: fit-content;
+  }
+
+  .accent {
+    background: lightgray;
   }
 
   ul {
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: 12px;
     margin-block: 0;
     padding: 0;
   }
@@ -65,12 +68,12 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
     font-weight: 600;
     font-size: 16px;
     text-decoration: none;
-    display: block;
+
     padding: 12px;
     display: flex;
     flex-direction: row;
-    gap: 12px;
-
+    align-items: center;
+    gap: 8px;
     transition:
       color ease-in-out 200ms,
       background ease-in-out 200ms;
@@ -79,6 +82,12 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
   a:hover {
     color: blue;
     background: lightblue;
+  }
+
+  @media (width <= 900px) {
+    a {
+      font-size: 12px;
+    }
   }
 
   @media (width <= 768px) {
