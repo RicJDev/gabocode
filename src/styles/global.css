@@ -1,3 +1,43 @@
+@font-face {
+  font-family: "Monaspace-Neon";
+  src: url('/gabocode/monaspace/Neon/Monaspace-Neon-Var.woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monaspace-Argon";
+  src: url('/gabocode/monaspace/Argon/Monaspace-Argon-Var.woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monaspace-Radon";
+  src: url('/gabocode/monaspace/Radon/Monaspace-Radon-Var.woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monaspace-Xenon";
+  src: url('/gabocode/monaspace/Xenon/Monaspace-Xenon-Var.woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monaspace-Krypton";
+  src: url('/gabocode/monaspace/Krypton/Monaspace-Krypton-Var.woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   font-size: 16px;
   font-family:
