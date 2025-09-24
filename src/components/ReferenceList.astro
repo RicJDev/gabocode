@@ -85,15 +85,17 @@ const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.
     position: fixed;
   }
 
-  .open-button, .list__close-button {
+  .open-button,
+  .list__close-button {
     display: none;
   }
 
   @media (width <= 768px) {
-    .open-button, .list__close-button {
+    .open-button,
+    .list__close-button {
       display: block;
     }
-    
+
     aside {
       height: 100%;
       position: fixed;
