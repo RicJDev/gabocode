@@ -12,25 +12,33 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
     <li>
       <a href="/gabocode/referencia">
         <IconBook />
-        <span> Referencia </span>
+        <span>
+          Referencia
+        </span>
       </a>
     </li>
     <li>
       <a href="/gabocode/ejercicios">
         <IconBarbell />
-        <span> Ejercicios </span>
+        <span>
+          Ejercicios
+        </span>
       </a>
     </li>
     <li>
       <a href="/gabocode/sugerir-cambios">
         <IconQuestionMark />
-        <span> Sugerir cambios </span>
+        <span>
+          Sugerir cambios
+        </span>
       </a>
     </li>
     <li>
       <a href="/gabocode/autor">
         <IconUser />
-        <span> Sobre el autor </span>
+        <span>
+          Sobre el autor
+        </span>
       </a>
     </li>
   </ul>
@@ -48,7 +56,7 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
   ul {
     display: flex;
     flex-direction: row;
-    gap: 12px;
+    gap: 8px;
     margin-block: 0;
     padding: 0;
   }
@@ -87,15 +95,17 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
       font-size: 12px;
     }
     display: block;
-    padding: 16px;
-    max-width: 240px;
-    text-align: center;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
 
-    transition: background ease-in-out 200ms;
+    transition: color ease-in-out 200ms, background ease-in-out 200ms;
   }
 
   a:hover {
-    background: #ccf;
+    color: blue;
+    background: lightblue;
   }
 
   @media (width <= 768px) {
