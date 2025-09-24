@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Monaspace-Neon";
+  font-family: 'Monaspace-Neon';
   src: url('/gabocode/monaspace/Neon/Monaspace-Neon-Var.woff');
   font-weight: normal;
   font-style: normal;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: "Monaspace-Argon";
+  font-family: 'Monaspace-Argon';
   src: url('/gabocode/monaspace/Argon/Monaspace-Argon-Var.woff');
   font-weight: normal;
   font-style: normal;
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  font-family: "Monaspace-Radon";
+  font-family: 'Monaspace-Radon';
   src: url('/gabocode/monaspace/Radon/Monaspace-Radon-Var.woff');
   font-weight: normal;
   font-style: normal;
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-  font-family: "Monaspace-Xenon";
+  font-family: 'Monaspace-Xenon';
   src: url('/gabocode/monaspace/Xenon/Monaspace-Xenon-Var.woff');
   font-weight: normal;
   font-style: normal;
@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  font-family: "Monaspace-Krypton";
+  font-family: 'Monaspace-Krypton';
   src: url('/gabocode/monaspace/Krypton/Monaspace-Krypton-Var.woff');
   font-weight: normal;
   font-style: normal;
