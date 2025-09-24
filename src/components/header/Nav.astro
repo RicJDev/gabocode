@@ -13,12 +13,36 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
     </li>
     <li>
       <a href="/gabocode/referencia">
-        <IconBook />Referencia
+        <IconBook />
+        <span>
+          Referencia
+        </span>
       </a>
     </li>
-    <li><a href="/gabocode/ejercicios"> <IconBarbell />Ejercicios</a></li>
-    <li><a href="/gabocode/sugerir-cambios"> <IconQuestionMark />Sugerir cambios</a></li>
-    <li><a href="/gabocode/autor"> <IconUser />Sobre el autor</a></li>
+    <li>
+      <a href="/gabocode/ejercicios">
+        <IconBarbell />
+        <span>
+          Ejercicios
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="/gabocode/sugerir-cambios">
+        <IconQuestionMark />
+        <span>
+          Sugerir cambios
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href="/gabocode/autor">
+        <IconUser />
+        <span>
+          Sobre el autor
+        </span>
+      </a>
+    </li>
   </ul>
 </nav>
 
@@ -31,9 +55,9 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
   ul {
     display: flex;
     flex-direction: row;
+    gap: 8px;
     margin-block: 0;
     padding: 0;
-    gap: 16px;
   }
 
   li {
@@ -44,20 +68,23 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
   }
 
   a {
+    color: inherit;
     border-radius: 8px;
     font-weight: 600;
     font-size: 16px;
     text-decoration: none;
     display: block;
-    padding: 16px;
-    max-width: 240px;
-    text-align: center;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
 
-    transition: background ease-in-out 200ms;
+    transition: color ease-in-out 200ms, background ease-in-out 200ms;
   }
 
   a:hover {
-    background: #ccf;
+    color: blue;
+    background: lightblue;
   }
 
   @media (width <= 768px) {
