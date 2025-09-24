@@ -4,7 +4,9 @@ title: Introducción
 index: 1
 ---
 
-## Fases de un algoritmo
+## Introducción al desarrollo de algoritmos
+
+### Fases de un algoritmo
 
 Todo algoritmo, por muy básico o muy complejo que sea, consta de tres fases:
 
@@ -12,7 +14,7 @@ Todo algoritmo, por muy básico o muy complejo que sea, consta de tres fases:
 2. **Proceso**: en esta fase, los datos recopilados son utilizados y transformados mediante procesos, formulas o combinaciones numéricas.
 3. **Salida**: en esta fase los datos son presentados al usuario, luego de terminada la fase de procesos. Dichos datos son la respuesta o la solución a la problemática presentada por el usuario.
 
-## Fases del desarrollo de una solución
+### Fases del desarrollo de una solución
 
 Para atender las diversas problemáticas que se presentan, es necesario tener una estrategia segura para poder dar respuesta a las inquietudes que surgen por parte de un usuario, para ello conoceremos a continuación la metodología para la solución de problemas por medio del computador. Está metodología consta de 7 aspectos que nos ayudarán a poder resolver la situación planteada y son los siguientes:
 
