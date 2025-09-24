@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Reference.astro
-title: Gabocode | Variables
+title: Variables
+index: 2
 ---
 
 ## Sintaxis general y tipos de datos

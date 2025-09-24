@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Reference.astro
-title: Gabocode | Estructuras condicionales
+title: Estructuras condicionales
+index: 3
 ---
 
 ## Estructura condicional `Si-Entonces`

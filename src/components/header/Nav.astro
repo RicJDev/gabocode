@@ -1,26 +1,45 @@
 ---
-import Close from '../../assets/close.svg'
+// import Close from '../../assets/close.svg'
+
+import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } from '@tabler/icons-react'
 ---
 
 <nav class="main-nav">
   <ul>
-    <li class="close">
+    <li class="close-button">
       <button>
-        <Close
-          height={32}
-          width={32}
-        />
+        <Close />
       </button>
     </li>
-    <li><a href="/gabocode/referencia">Referencia</a></li>
-    <li><a href="/gabocode/ejercicios">Ejercicios</a></li>
-    <li><a href="/gabocode/sugerir-cambios">Sugerir cambios</a></li>
-    <li><a href="/gabocode/autor">Sobre el autor</a></li>
+    <li>
+      <a href="/gabocode/referencia">
+        <IconBook />
+        <span> Referencia </span>
+      </a>
+    </li>
+    <li>
+      <a href="/gabocode/ejercicios">
+        <IconBarbell />
+        <span> Ejercicios </span>
+      </a>
+    </li>
+    <li>
+      <a href="/gabocode/sugerir-cambios">
+        <IconQuestionMark />
+        <span> Sugerir cambios </span>
+      </a>
+    </li>
+    <li>
+      <a href="/gabocode/autor">
+        <IconUser />
+        <span> Sobre el autor </span>
+      </a>
+    </li>
   </ul>
 </nav>
 
 <style>
-  .close {
+  .close-button {
     display: none;
     size: fit-content;
   }
@@ -28,9 +47,9 @@ import Close from '../../assets/close.svg'
   ul {
     display: flex;
     flex-direction: row;
+    gap: 8px;
     margin-block: 0;
     padding: 0;
-    gap: 16px;
   }
 
   li {
@@ -41,14 +60,29 @@ import Close from '../../assets/close.svg'
   }
 
   a {
+    color: inherit;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
     display: block;
-    padding: 16px;
-    border: solid black 1px;
-    max-width: 240px;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+
+    transition:
+      color ease-in-out 200ms,
+      background ease-in-out 200ms;
+  }
+
+  a:hover {
+    color: blue;
+    background: lightblue;
   }
 
   @media (width <= 768px) {
-    .close {
+    .close-button {
       display: block;
     }
 
@@ -65,6 +99,7 @@ import Close from '../../assets/close.svg'
       top: 0;
       right: -100%;
       z-index: 10;
+      height: 100%;
       transition: right 300ms ease-out;
     }
 
