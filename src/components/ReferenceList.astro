@@ -1,21 +1,20 @@
 ---
-import Close from '../assets/close.svg'
-const matches = import.meta.glob('../pages/referencia/*.md', { eager: true })
-const posts = Object.values(matches)
+import type { MarkdownInstance } from 'astro'
+
+interface Fronmatter {
+  title: string
+  index: number
+}
+
+const matches = import.meta.glob<MarkdownInstance<Fronmatter>>('../pages/referencia/*.md', { eager: true })
+const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.frontmatter.index)
 ---
 
-<aside>
+<button class="open-button">Menu</button>
+<aside class="reference-list">
   <ul>
     <li>
-      <button
-        class="close-list"
-        onclick="closeSidebar()"
-      >
-        <Close
-          width={32}
-          height={32}
-        />
-      </button>
+      <button class="list__close-button">Cerrar Menu</button>
     </li>
     {
       posts.map((post) => (
@@ -27,16 +26,27 @@ const posts = Object.values(matches)
   </ul>
 </aside>
 
+<script>
+  const $openButton = document.querySelector('.open-button')
+  const $closeButton = document.querySelector('.list__close-button')
+  const $referenceList = document.querySelector('.reference-list')
+
+  $openButton?.addEventListener('click', () => {
+    $referenceList?.classList.add('oppened')
+  })
+
+  $closeButton?.addEventListener('click', () => {
+    $referenceList?.classList.remove('oppened')
+  })
+</script>
+
 <style>
-  .close-list {
-    display: none;
-    width: fit-content;
-    height: fit-content;
+  aside.oppened {
+    left: 0;
   }
 
   aside {
     width: 192px;
-    height: 100%;
     background: white;
     border-right: solid #ccf 1px;
   }
@@ -45,15 +55,14 @@ const posts = Object.values(matches)
     display: flex;
     flex-direction: column;
     list-style-type: none;
+    margin-block: 0;
+    padding-inline: 0;
     height: 100%;
-    margin: 0;
-    padding: 0;
   }
 
   li {
-    list-style: none;
-    list-style-type: none;
     display: block;
+    padding: 8px;
   }
 
   a {
@@ -63,27 +72,33 @@ const posts = Object.values(matches)
     padding: 12px;
     text-decoration: none;
     color: inherit;
+    border-radius: 8px;
+    transition: all ease-in-out 200ms;
   }
 
   a:hover {
     color: blue;
+    background: lightblue;
+  }
+
+  .open-button {
+    position: fixed;
+  }
+
+  .open-button, .list__close-button {
+    display: none;
   }
 
   @media (width <= 768px) {
-    aside {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      z-index: 10;
-      transition: right 300ms ease-out;
-    }
-
-    aside.show {
-      right: 0;
-    }
-
-    .close-list {
+    .open-button, .list__close-button {
       display: block;
+    }
+    
+    aside {
+      height: 100%;
+      position: fixed;
+      left: -100%;
+      transition: left ease-in-out 300ms;
     }
   }
 </style>
