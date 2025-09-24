@@ -77,7 +77,7 @@ Fin
 ```
 
 Aunque personalmente prefiero no mezclar los tipos de datos en una misma línea. Es cuestión de gustos.
+
 ### Asignando valores
 
 ### Leyendo input del usuario
-
