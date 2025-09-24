@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Reference.astro
 title: En_Caso
+index: 3
 ---
 
 ## Estructura `En_Caso`
