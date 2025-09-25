@@ -7,9 +7,35 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
 <nav class="main-nav">
   <ul>
     <li class="close-button">
+    <li class="close-button">
       <button>
         <Close />
+        <Close />
       </button>
+    </li>
+    <li>
+      <a href="/gabocode/referencia">
+        <IconBook />
+        <span> Referencia </span>
+      </a>
+    </li>
+    <li>
+      <a href="/gabocode/ejercicios">
+        <IconBarbell />
+        <span> Ejercicios </span>
+      </a>
+    </li>
+    <li>
+      <a href="/gabocode/sugerir-cambios">
+        <IconQuestionMark />
+        <span> Sugerir cambios </span>
+      </a>
+    </li>
+    <li>
+      <a href="/gabocode/autor">
+        <IconUser />
+        <span> Sobre el autor </span>
+      </a>
     </li>
     <li>
       <a href="/gabocode/referencia">
@@ -39,6 +65,7 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
 </nav>
 
 <style>
+  .close-button {
   .close-button {
     display: none;
   }
@@ -92,6 +119,7 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
 
   @media (width <= 768px) {
     .close-button {
+    .close-button {
       display: block;
     }
 
@@ -108,6 +136,7 @@ import { IconBook, IconBarbell, IconQuestionMark, IconUser, IconX as Close } fro
       top: 0;
       right: -100%;
       z-index: 10;
+      height: 100%;
       height: 100%;
       transition: right 300ms ease-out;
     }

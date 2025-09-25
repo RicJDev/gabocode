@@ -66,6 +66,14 @@ li > code,
 h2 > code,
 h3 > code,
 p > code {
+h2,
+h3 {
+  margin: 32px 0;
+}
+
+h2 > code,
+h3 > code,
+p > code {
   font-size: inherit;
   background: #ccc;
   color: #222;
@@ -89,5 +97,6 @@ pre {
 @media (width <= 768px) {
   pre {
     font-size: 12px;
+    width: 100%;
   }
 }
