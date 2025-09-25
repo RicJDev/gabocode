@@ -4,16 +4,17 @@ import ReferenceList from '../components/ReferenceList.astro'
 ---
 
 <Layout>
-  <main>
+  <div>
     <ReferenceList />
     <article>
       <slot />
     </article>
-  </main>
+  </div>
 </Layout>
 
 <style>
-  main {
+  div {
+    width: 100%;
     display: flex;
     flex-direction: row;
   }

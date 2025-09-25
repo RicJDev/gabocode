@@ -1,6 +1,5 @@
 ---
 import Nav from './Nav.astro'
-// import Links from './Links.astro'
 import { IconMenu2 as Burger } from '@tabler/icons-react'
 ---
 
@@ -31,7 +30,7 @@ import { IconMenu2 as Burger } from '@tabler/icons-react'
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 100%;
+    justify-content: space-between;
     background: #fff;
     border-bottom: solid #bbd 1px;
     padding: 12px;
@@ -43,13 +42,9 @@ import { IconMenu2 as Burger } from '@tabler/icons-react'
     color: inherit;
   }
 
-  a,
-  h1 {
-    margin-right: auto;
-  }
-
   h1 {
     color: inherit;
+    font-size: 32px;
   }
 
   @media (width <= 768px) {
