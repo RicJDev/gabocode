@@ -32,7 +32,7 @@ jobs:
       - name: Prettier Action
         uses: creyD/prettier_action@v4.6
         with:
-          same_commtin: true
+          same_commit: true
           allow_other_plugins: true
           prettier_options: "--config .prettierrc --write {**/*,*}.{js,html,json,md,css,astro,jsx} --ignore-path .prettierignore"
           file_pattern: "."
