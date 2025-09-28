@@ -1,54 +1,111 @@
 ---
-import Nav from './Nav.astro'
-import { IconMenu2 as Burger } from '@tabler/icons-react'
+import { IconMenu2, IconX } from '@tabler/icons-react'
 ---
 
 <header>
-  <a href="/gabocode">
+  <a class="main-link" href="/gabocode">
     <h1>Gabocode</h1>
   </a>
 
-  <button class="burger">
-    <Burger />
+  <button class="icon open-menu">
+    <IconMenu2 height={"32px"} width={"32px"} />
   </button>
 
-  <Nav />
-
-  <script src="./script.js"></script>
+  <nav>
+    <ul>
+      <li>
+        <button class="icon">
+          <IconX height={"32px"} width={"32px"} />
+        </button>
+      </li>
+      <li><a class="nav-link" href="/gabocode/referencia">Referencia</a></li>
+      <li><a class="nav-link" href="/gabocode/ejercicios">Ejercicios</a></li>
+      <li><a class="nav-link" href="/gabocode/sugerir-cambios">Sugerir cambios</a></li>
+      <li><a class="nav-link" href="/gabocode/autor">Sobre mí</a></li>
+    </ul>
+  </nav>
 </header>
 
 <style>
-  .burger {
+  button.icon {
     display: none;
-    size: fit-content;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  ul, li {
+    list-style: none;
+    margin-block: 0;
+    padding-inline: 0;
+  }
+
+  li {
+    display: block;
+  }
+
+  ul, nav {
+    display: flex;
+    gap: 12px;
   }
 
   header {
     width: 100%;
-    padding: 24px 0;
-    position: sticky;
-    top: 0;
+    height: 96px;
+    padding: 16px;
+    border: solid 1px black;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-    border-bottom: 1px solid black;
+    align-items: baseline;
+
+    position: sticky;
+    top: 0;
+    background: white;
   }
 
-  a {
+  a.main-link {
+    margin-right: auto;
+    color: inherit;
     text-decoration: none;
-    height: inherit;
-    color: inherit;
   }
 
-  h1 {
+  a.nav-link {
     color: inherit;
-    font-size: 32px;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+
+    padding: 12px 8px;
+    border-radius: 8px;
+    transition:
+      color 200ms ease-in-out,
+      background 200ms ease-in-out;
+  }
+
+  a.nav-link:hover {
+    background: lightblue;
+    color: blue;
   }
 
   @media (width <= 768px) {
-    .burger {
+    header {
+      height: 64px;
+      align-items: center;
+    }
+
+    nav {
+      position: fixed;
+      top: 96px;
+      right: -100%;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    ul, nav {
+      flex-direction: column;
+    }
+
+    button.icon {
       display: block;
     }
   }
