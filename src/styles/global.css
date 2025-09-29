@@ -1,23 +1,29 @@
 @font-face {
   font-family: 'Monaspace-Neon';
-  src: url('/gabocode/monaspace/Neon-Var.woff2');
+  src: url('/gabocode/monaspace/Neon-Var.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Monaspace-Argon';
-  src: url('/gabocode/monaspace/Argon-Var.woff2');
+  src: url('/gabocode/monaspace/Argon-Var.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ajusted-Fallback';
+  size-adjust: 130%;
+  src: local(Arial);
 }
 
 body {
   font-size: 16px;
   font-weight: 400;
-  font-family: 'Monaspace-Neon';
+  font-family: 'Monaspace-Neon', 'Ajusted-Fallback';
 }
 
 h2 {
