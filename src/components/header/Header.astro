@@ -1,5 +1,5 @@
 ---
-import { IconMenu2, IconX } from '@tabler/icons-react'
+import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@tabler/icons-react'
 ---
 
 <header>
@@ -14,14 +14,37 @@ import { IconMenu2, IconX } from '@tabler/icons-react'
   <nav class="main-nav">
     <ul>
       <li>
-        <button class="icon close-nav">
-          <IconX height={"32px"} width={"32px"} />
-        </button>
+        <a class="nav-link" href="/gabocode/referencia">
+          <IconBook  height={"32px"} width={"32px"} />
+          <span>
+            Referencia
+          </span>
+        </a>
       </li>
-      <li><a class="nav-link" href="/gabocode/referencia">Referencia</a></li>
-      <li><a class="nav-link" href="/gabocode/ejercicios">Ejercicios</a></li>
-      <li><a class="nav-link" href="/gabocode/sugerir-cambios">Sugerir cambios</a></li>
-      <li><a class="nav-link" href="/gabocode/autor">Sobre mí</a></li>
+      <li>
+        <a class="nav-link" href="/gabocode/ejercicios">
+          <IconBarbell height={"32px"} width={"32px"} />
+          <span>
+            Ejercicios
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="/gabocode/sugerir-cambios">
+          <IconQuestionMark height={"32px"} width={"32px"} />
+          <span>
+            Sugerir cambios
+          </span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="/gabocode/autor">
+          <IconUser height={"32px"} width={"32px"} />
+          <span>
+            Sobre mí
+          </span>
+        </a>
+      </li>
     </ul>
   </nav>
 
@@ -29,25 +52,22 @@ import { IconMenu2, IconX } from '@tabler/icons-react'
     const $navLinks: NodeListOf<HTMLLinkElement> = document.querySelectorAll('.nav-link')
     const location = window.location.pathname
 
-    for (const $navLink of $navLinks) {
-      const linkHref = $navLink.href
-      const localPath = location.match(/\/gabocode\/[^\/]+/g) ?? ['']
+    if (location != '/gabocode') {
+      for (const $navLink of $navLinks) {
+        const linkHref = $navLink.href
+        const localPath = location.match(/\/gabocode\/[^\/]+/g) ?? ['']
 
-      if (new RegExp(localPath[0]).test(linkHref)) {
-        $navLink.classList.toggle('focused')
+        if (new RegExp(localPath[0]).test(linkHref)) {
+          $navLink.classList.toggle('focused')
+        }
       }
     }
 
     const $openMenu = document.querySelector('.open-nav')
-    const $closeMenu = document.querySelector('.close-nav')
     const $mainNav = document.querySelector('.main-nav')
 
     $openMenu?.addEventListener('click', () => {
-      $mainNav?.classList.add('openned')
-    })
-
-    $closeMenu?.addEventListener('click', () => {
-      $mainNav?.classList.remove('openned')
+      $mainNav?.classList.toggle('openned')
     })
   </script>
 </header>
@@ -71,7 +91,7 @@ import { IconMenu2, IconX } from '@tabler/icons-react'
 
   ul, nav {
     display: flex;
-    gap: 12px;
+    gap: 24px;
     align-items: baseline;
   }
 
@@ -82,7 +102,7 @@ import { IconMenu2, IconX } from '@tabler/icons-react'
     border: solid 1px black;
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
 
     position: sticky;
     top: 0;
@@ -99,9 +119,9 @@ import { IconMenu2, IconX } from '@tabler/icons-react'
     color: #999;
     text-decoration: none;
     text-align: center;
-    position: relative;
-
-    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition:
       color 200ms ease-in-out;
   }
@@ -119,19 +139,6 @@ import { IconMenu2, IconX } from '@tabler/icons-react'
     color: inherit;
   }
 
-  /* a.focused::after { */
-  /*   content: ''; */
-  /*   text-align: center; */
-  /*   position: absolute; */
-  /*   bottom: 0; */
-  /*   left: 50%; */
-  /*   background: lightblue; */
-  /*   height: 4px; */
-  /*   width: 80%; */
-  /*   transform: translateX(-50%); */
-  /*   border-radius: 4px; */
-  /* } */
-
   nav.main-nav.openned {
     right: 0;
   }
@@ -145,13 +152,19 @@ import { IconMenu2, IconX } from '@tabler/icons-react'
     nav.main-nav {
       background: white;
       position: fixed;
-      top: 0;
+      top: 64px;
+      width: 248px;
       right: -100%;
-      z-index: 10;
-      width: 220px;
       height: 100%;
+      z-index: 10;
+      padding: 24px;
+
       gap: 32px;
       transition: right ease-in-out 300ms;
+    }
+
+    a.nav-link {
+      flex-direction: row;
     }
 
     ul, nav.main-nav {
