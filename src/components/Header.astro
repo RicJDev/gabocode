@@ -3,46 +3,53 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
 ---
 
 <header>
-  <a class="main-link" href="/gabocode">
+  <a
+    class="main-link"
+    href="/gabocode"
+  >
     <h1>Gabocode</h1>
   </a>
 
   <button class="open-nav">
-    <IconMenu2 className='icon' />
+    <IconMenu2 className="icon" />
   </button>
 
   <nav class="main-nav">
     <ul>
       <li>
-        <a class="nav-link" href="/gabocode/referencia">
-          <IconBook  className='icon'/>
-          <span>
-            Referencia
-          </span>
+        <a
+          class="nav-link"
+          href="/gabocode/referencia"
+        >
+          <IconBook className="icon" />
+          <span> Referencia </span>
         </a>
       </li>
       <li>
-        <a class="nav-link" href="/gabocode/ejercicios">
-          <IconBarbell className='icon'/>
-          <span   >
-            Ejercicios
-          </span>
+        <a
+          class="nav-link"
+          href="/gabocode/ejercicios"
+        >
+          <IconBarbell className="icon" />
+          <span> Ejercicios </span>
         </a>
       </li>
       <li>
-        <a class="nav-link" href="/gabocode/sugerir-cambios">
-          <IconQuestionMark className='icon' />
-          <span>
-            Sugerir cambios
-          </span>
+        <a
+          class="nav-link"
+          href="/gabocode/sugerir-cambios"
+        >
+          <IconQuestionMark className="icon" />
+          <span> Sugerir cambios </span>
         </a>
       </li>
       <li>
-        <a class="nav-link" href="/gabocode/autor">
-          <IconUser className='icon' />
-          <span>
-            Sobre mí
-          </span>
+        <a
+          class="nav-link"
+          href="/gabocode/autor"
+        >
+          <IconUser className="icon" />
+          <span> Sobre mí </span>
         </a>
       </li>
     </ul>
@@ -90,14 +97,16 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
     height: var(--size-5);
   }
 
-  ul, li {
+  ul,
+  li {
     list-style: none;
     margin-block: 0;
     padding-inline: 0;
     display: block;
   }
 
-  ul, nav {
+  ul,
+  nav {
     display: flex;
     align-items: baseline;
   }
@@ -172,7 +181,8 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
       flex-direction: row;
     }
 
-    ul, nav {
+    ul,
+    nav {
       flex-direction: column;
     }
 
