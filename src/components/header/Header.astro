@@ -7,15 +7,15 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
     <h1>Gabocode</h1>
   </a>
 
-  <button class="icon open-nav">
-    <IconMenu2 height={"32px"} width={"32px"} />
+  <button class="open-nav">
+    <IconMenu2 className='icon' />
   </button>
 
   <nav class="main-nav">
     <ul>
       <li>
         <a class="nav-link" href="/gabocode/referencia">
-          <IconBook  height={"32px"} width={"32px"} />
+          <IconBook  className='icon'/>
           <span>
             Referencia
           </span>
@@ -23,15 +23,15 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
       </li>
       <li>
         <a class="nav-link" href="/gabocode/ejercicios">
-          <IconBarbell height={"32px"} width={"32px"} />
-          <span>
+          <IconBarbell className='icon'/>
+          <span   >
             Ejercicios
           </span>
         </a>
       </li>
       <li>
         <a class="nav-link" href="/gabocode/sugerir-cambios">
-          <IconQuestionMark height={"32px"} width={"32px"} />
+          <IconQuestionMark className='icon' />
           <span>
             Sugerir cambios
           </span>
@@ -39,7 +39,7 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
       </li>
       <li>
         <a class="nav-link" href="/gabocode/autor">
-          <IconUser height={"32px"} width={"32px"} />
+          <IconUser className='icon' />
           <span>
             Sobre mí
           </span>
@@ -73,10 +73,13 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
 </header>
 
 <style>
-  button.icon {
+  button {
     display: none;
-    width: fit-content;
-    height: fit-content;
+  }
+
+  .icon {
+    width: var(--size-5);
+    height: var(--size-5);
   }
 
   ul, li {
@@ -91,52 +94,40 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
 
   ul, nav {
     display: flex;
-    gap: 24px;
+    gap: var(--size-5);
     align-items: baseline;
   }
 
   header {
     width: 100%;
-    height: 96px;
-    padding: 16px;
-    border: solid 1px black;
+    height: var(--size-9);
     display: flex;
     flex-direction: row;
     align-items: center;
-
     position: sticky;
     top: 0;
-    background: white;
+    background: var(--background);
+    padding: var(--size-5);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 
   a.main-link {
     margin-right: auto;
-    color: inherit;
-    text-decoration: none;
   }
 
   a.nav-link {
-    color: #999;
-    text-decoration: none;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition:
-      color 200ms ease-in-out;
-  }
-
-  a.nav-link:hover {
-    color: blue;
   }
 
   a.focused {
-    color: inherit;
-    position: relative;
-  }
-
-  a.focused:hover {
-    color: inherit;
+    color: var(--primary);
   }
 
   nav.main-nav.openned {
@@ -144,22 +135,20 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
   }
 
   @media (width <= 768px) {
+    button {
+      display: block;
+    }
+
     header {
-      height: 64px;
       align-items: center;
     }
 
     nav.main-nav {
-      background: white;
+      background: var(--background);
       position: fixed;
-      top: 64px;
-      width: 248px;
       right: -100%;
       height: 100%;
       z-index: 10;
-      padding: 24px;
-
-      gap: 32px;
       transition: right ease-in-out 300ms;
     }
 
@@ -169,10 +158,6 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
 
     ul, nav.main-nav {
       flex-direction: column;
-    }
-
-    button.icon {
-      display: block;
     }
   }
 </style>
