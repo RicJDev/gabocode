@@ -10,12 +10,8 @@ const matches = import.meta.glob<MarkdownInstance<Fronmatter>>('../pages/referen
 const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.frontmatter.index)
 ---
 
-<button class="open-button">Menu</button>
 <aside class="reference-list">
   <ul>
-    <li>
-      <button class="list__close-button">Cerrar Menu</button>
-    </li>
     {
       posts.map((post) => (
         <li>
@@ -26,29 +22,10 @@ const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.
   </ul>
 </aside>
 
-<script>
-  const $openButton = document.querySelector('.open-button')
-  const $closeButton = document.querySelector('.list__close-button')
-  const $referenceList = document.querySelector('.reference-list')
-
-  $openButton?.addEventListener('click', () => {
-    $referenceList?.classList.add('oppened')
-  })
-
-  $closeButton?.addEventListener('click', () => {
-    $referenceList?.classList.remove('oppened')
-  })
-</script>
-
 <style>
-  aside.oppened {
-    left: 0;
-  }
-
   aside {
-    width: 192px;
-    background: white;
-    border-right: solid #ccf 1px;
+    width: var(--size-11);
+    background: var(--background);
   }
 
   ul {
@@ -62,45 +39,12 @@ const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.
 
   li {
     display: block;
-    padding: 8px;
   }
 
   a {
     display: block;
     font-weight: 600;
-    min-height: 32px;
-    padding: 12px;
     text-decoration: none;
     color: inherit;
-    border-radius: 8px;
-    transition: all ease-in-out 200ms;
-  }
-
-  a:hover {
-    color: blue;
-    background: lightblue;
-  }
-
-  .open-button {
-    position: fixed;
-  }
-
-  .open-button,
-  .list__close-button {
-    display: none;
-  }
-
-  @media (width <= 768px) {
-    .open-button,
-    .list__close-button {
-      display: block;
-    }
-
-    aside {
-      height: 100%;
-      position: fixed;
-      left: -100%;
-      transition: left ease-in-out 300ms;
-    }
   }
 </style>
