@@ -1,5 +1,6 @@
 ---
-import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@tabler/icons-react'
+import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
+import { IconBrandGithub } from '@tabler/icons-react'
 ---
 
 <header>
@@ -9,10 +10,6 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
   >
     <h1>Gabocode</h1>
   </a>
-
-  <button class="open-nav">
-    <IconMenu2 className="icon" />
-  </button>
 
   <nav class="main-nav">
     <ul>
@@ -39,7 +36,6 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
           class="nav-link"
           href="/gabocode/sugerir-cambios"
         >
-          <IconQuestionMark className="icon" />
           <span> Sugerir cambios </span>
         </a>
       </li>
@@ -48,12 +44,15 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
           class="nav-link"
           href="/gabocode/autor"
         >
-          <IconUser className="icon" />
           <span> Sobre mí </span>
         </a>
       </li>
     </ul>
   </nav>
+
+  <button class="open-nav">
+    <IconMenu2 className="icon" />
+  </button>
 
   <script>
     const $navLinks: NodeListOf<HTMLLinkElement> = document.querySelectorAll('.nav-link')
@@ -81,8 +80,40 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
 </header>
 
 <style>
+  a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border-radius: var(--size-1);
+    padding: var(--size-1);
+  }
+
+  a:hover {
+    background: var(--link-hover);
+  }
+
+  a.nav-link {
+    color: var(--secondary);
+    text-align: center;
+    display: flex;
+    gap: var(--size-1);
+    align-items: center;
+    padding: var(--size-2);
+  }
+
+  a.main-link {
+    color: var(--primary);
+    margin-left: 0;
+  }
+
+  a.focused {
+    color: var(--accent);
+  }
+
   button {
     border: 0;
+    border: solid var(--size-1);
+    border-radius: var(--size-1);
     background: inherit;
     color: var(--accent);
     display: none;
@@ -92,23 +123,20 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
     color: var(--secondary);
   }
 
-  .icon {
-    width: var(--size-5);
-    height: var(--size-5);
+  nav ul {
+    display: flex;
+    align-items: center;
   }
 
-  ul,
-  li {
+  ul, li {
     list-style: none;
     margin-block: 0;
     padding-inline: 0;
     display: block;
   }
 
-  ul,
-  nav {
-    display: flex;
-    align-items: baseline;
+  nav.openned {
+    right: 0;
   }
 
   header {
@@ -118,7 +146,8 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
 
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
+    align-items: baseline;
     position: sticky;
     top: 0;
 
@@ -126,34 +155,9 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
     border-bottom: var(--size-1) solid var(--primary);
   }
 
-  a {
-    text-decoration: none;
-  }
-
-  a.main-link {
-    color: var(--primary);
-    margin-right: auto;
-  }
-
-  a.nav-link {
-    color: var(--secondary);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--size-2);
-  }
-
-  a.nav-link:hover {
-    background: var(--link-hover);
-  }
-
-  a.focused {
-    color: var(--accent);
-  }
-
-  nav.openned {
-    right: 0;
+  .icon {
+    width: var(--size-5);
+    height: var(--size-5);
   }
 
   @media (width <= 768px) {
@@ -177,13 +181,12 @@ import { IconMenu2, IconBook, IconBarbell, IconQuestionMark, IconUser } from '@t
       transition: right ease-in-out 300ms;
     }
 
-    a.nav-link {
-      flex-direction: row;
+    nav ul {
+      flex-direction: column;
     }
 
-    ul,
-    nav {
-      flex-direction: column;
+    a.nav-link {
+      flex-direction: row;
     }
 
     ul > * + *,
