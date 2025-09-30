@@ -17,6 +17,7 @@
 @font-face {
   font-family: 'Ajusted-Fallback';
   size-adjust: 130%;
+  font-weight: normal;
   src: local(Arial);
 }
 
@@ -112,6 +113,7 @@ h6 {
     --primary: #2e3e60;
     --secondary: #b18ac7;
     --accent: #914997;
+    --link-hover: #e8e9ec;
   }
 }
 
@@ -122,6 +124,7 @@ h6 {
     --primary: #9fafd1;
     --secondary: #603875;
     --accent: #b068b6;
+    --link-hover: #131417;
   }
 }
 
@@ -129,7 +132,7 @@ h6 {
 
 body {
   font-size: var(--size-4);
-  font-weight: 400;
+  font-weight: normal;
   font-family: 'Monaspace-Neon', 'Ajusted-Fallback';
 }
 
@@ -163,6 +166,5 @@ pre {
   font-family: 'Monaspace-Argon';
   padding: var(--size-2);
   font-size: var(--size-4);
-  max-width: 90vw;
   align-self: center;
 }
