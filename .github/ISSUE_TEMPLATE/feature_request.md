@@ -1,9 +1,10 @@
 ---
 name: Solicitud de nueva característica
 about: Sugiere una idea para este proyecto
-title: '[FEAT]'
+title: "[FEAT]"
 labels: ''
-assignees:
+assignees: ''
+
 ---
 
 **¿Está la característica que solicitas relacionada con algún problema? Por favor descríbelo.**
