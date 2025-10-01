@@ -12,7 +12,7 @@ const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.
 
 <aside class="reference-list">
   <nav>
-    <ul class="stack">
+    <ul>
       {
         posts.map((post) => (
           <li>
@@ -28,7 +28,7 @@ const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.
   aside {
     position: sticky;
     top: var(--size-9);
-    min-width: var(--size-11);
+    width: var(--size-11);
     height: calc(100vh - var(--size-9));
     overflow-y: auto;
     background: var(--background);
@@ -42,18 +42,22 @@ const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.
     list-style-type: none;
     margin-block: 0;
     padding-inline: 0;
+    gap: var(--size-3);
     height: 100%;
+    width: 100%;
   }
 
+  a,
   li {
     display: block;
     width: fit-content;
+    text-align: left;
   }
 
   a {
+    max-width: min-content;
     text-decoration: none;
     color: inherit;
-    display: block;
     border-radius: var(--size-1);
     padding: var(--size-1);
   }
