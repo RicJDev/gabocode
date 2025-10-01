@@ -7,6 +7,7 @@ index: 3
 ## Operaciones matemáticas
 
 ### Sintaxis básica
+
 Empecemos viendo un algoritmo:
 
 ```gabo
@@ -47,7 +48,7 @@ Desarrollando la división del ejemplo, podemos ver por qué da 1.
 
 <!-- TODO: insertar imagen -->
 
-Aquí tienes [este artículo](https://es.wikipedia.org/wiki/M%C3%B3dulo_(matem%C3%A1tica)) por si necesitas más información acerca del módulo.
+Aquí tienes [este artículo](<https://es.wikipedia.org/wiki/M%C3%B3dulo_(matem%C3%A1tica)>) por si necesitas más información acerca del módulo.
 
 ### Obteniendo la "raíz cuadrada"
 
