@@ -1,22 +1,17 @@
 ---
 import Layout from './Layout.astro'
 import ReferenceList from '../components/ReferenceList.astro'
+import Article from '../components/Article.astro'
 ---
 
 <Layout>
   <div>
     <ReferenceList />
-    <article>
+    <Article>
       <slot />
-    </article>
+    </Article>
   </div>
 </Layout>
-
-<style is:global>
-  article > * + * {
-    margin-block: var(--size-4);
-  }
-</style>
 
 <style>
   div {
@@ -25,7 +20,6 @@ import ReferenceList from '../components/ReferenceList.astro'
   }
 
   article {
-    padding: 0 var(--size-4);
     margin: auto;
   }
 </style>
