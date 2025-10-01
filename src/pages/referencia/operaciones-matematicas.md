@@ -80,6 +80,8 @@ Fin
 
 ### Agrupamiento
 
+Dentro de las operaciones matemáticas existen las jerarquías. Primero se resuelven la potenciación, luego la multiplicación y división, y finalmente la suma y resta. Si queremos "sobreescribir" este orden y realizar operaciones intermedias, debemos agrupar a los operandos de la operación. Esto se logra con paréntesis y corchetes.
+
 ```gabo
 Algoritmo agrupemos_todo
 Inicio
