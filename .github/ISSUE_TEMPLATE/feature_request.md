@@ -1,19 +1,19 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
+name: Solicitud de nueva característica
+about: Sugiere una idea para este proyecto
+title: '[FEAT]'
 labels: ''
-assignees: RicJDev
+assignees:
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**¿Está la característica que solicitas relacionada con algún problema? Por favor descríbelo.**
+Una descripción clara y concisa de cuál es el problema. Por ejemplo, "Siempre me frusta cuando [...]"
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**Describe la solución que te gustaría**
+Una descripción clara y concisa de qué quieres que suceda.
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**Describe alternativas que hayas considerado**
+Una descripción clara y concisa cualquier solución alternativa u otras características que hayas considerado.
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**Contexto adicional**
+Añade aquí cualquier otro contexto o captura de pantalla acerca de esta solicitud.
