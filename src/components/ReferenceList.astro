@@ -11,21 +11,29 @@ const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.
 ---
 
 <aside class="reference-list">
-  <ul>
-    {
-      posts.map((post) => (
-        <li>
-          <a href={post?.url}>{post.frontmatter.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+  <nav>
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <a href={post?.url}>{post.frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
 </aside>
 
 <style>
   aside {
+    position: sticky;
+    top: var(--size-9);
     width: var(--size-11);
+    height: calc(100vh - var(--size-9));
+    overflow-y: auto;
     background: var(--background);
+    border-right: var(--primary) solid var(--size-1);
+    padding: var(--size-3) 0;
   }
 
   ul {
@@ -34,17 +42,27 @@ const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.
     list-style-type: none;
     margin-block: 0;
     padding-inline: 0;
+    gap: var(--size-3);
     height: 100%;
+    width: 100%;
   }
 
+  a,
   li {
     display: block;
+    width: fit-content;
+    text-align: left;
   }
 
   a {
-    display: block;
-    font-weight: 600;
+    max-width: min-content;
     text-decoration: none;
     color: inherit;
+    border-radius: var(--size-1);
+    padding: var(--size-1);
+  }
+
+  a:hover {
+    background: var(--link-hover);
   }
 </style>

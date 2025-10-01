@@ -168,3 +168,9 @@ pre {
   font-size: var(--size-4);
   align-self: center;
 }
+
+/* Algunas clases utiles */
+
+.stack > * + * {
+  margin-block: var(--size-5);
+}
