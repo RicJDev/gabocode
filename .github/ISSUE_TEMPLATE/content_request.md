@@ -1,10 +1,9 @@
 ---
 name: Documentación
 about: Ayuda a mejorar la documentación
-title: "[DOCS]"
+title: '[DOCS]'
 labels: documentation
 assignees: ''
-
 ---
 
 # Documentación pendiente: [Título o tema específico]
