@@ -108,23 +108,23 @@ h6 {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --text: #0c0f18;
-    --background: #f8f9fc;
-    --primary: #2e3e60;
-    --secondary: #b18ac7;
-    --accent: #914997;
-    --link-hover: #e8e9ec;
+    --text: #000000;
+    --background: #e9eaed;
+    --primary: #2fb65a;
+    --secondary: #c5c9d3;
+    --accent: #bbb11b;
+    --link-hover: #f9fafd;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #e7eaf3;
-    --background: #030407;
-    --primary: #9fafd1;
-    --secondary: #603875;
-    --accent: #b068b6;
-    --link-hover: #131417;
+    --text: #FFFFFF;
+    --background: #131417;
+    --primary: #47CF73;
+    --secondary: #2C303A;
+    --accent: #E4D944;
+    --link-hover: #030407;
   }
 }
 
