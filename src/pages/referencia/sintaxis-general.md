@@ -6,7 +6,7 @@ index: 2
 
 ## Sintaxis general y tipos de datos
 
-### Estructura de un algoritmo 🔗
+### Estructura de un algoritmo
 
 Veamos este programa básico en Gabocode:
 
@@ -23,7 +23,7 @@ También vemos un comando `Mostrar`. Si has programado antes, sabes que todo len
 
 > El operador `<<` es heredado del de C++ (fuente de inspiración para el profesor). En ese lenguaje está asociado al objeto `cout` y permite, precisamente, mandar texto a la consola. Pronto veremos otro operador tomado de este mismo lenguaje.
 
-### Variables y tipos de datos 👀
+### Variables y tipos de datos
 
 En programación una variable es un espacio en memoria reservado para guardar un dato. Sucede de manera similar en el pseudo código. Recordar que en la [sección anterior](/gabocode/referencia/introduccion) se hablaba de solicitar datos y transformarlos para obtener un resultado. Si no guardamos esos datos en alguna parte ninguna de estas transformaciones sería posible. He ahí la importancia de las variables.
 
@@ -96,7 +96,7 @@ Inicio
 Fin
 ```
 
-### Asignando valores 💰
+### Asignando valores
 
 Bien, ya tenemos variables. Es hora de asignarles valores.
 
@@ -134,7 +134,7 @@ Fin
 
 > Dentro de la programación, asignarle un valor inicial a una variable se conoce como inicialización. En la sección de contadores y acumuladores veremos muchos ejemplos de esto.
 
-### Leyendo input del usuario ✨
+### Leyendo input del usuario
 
 La segunda forma de asignarle un valor a una variable es obteniéndolo del usuario. En el pseudo código, esto se logra gracias al comando `Leer`, el cual va acompañado del operador `>>`, seguido de la variable en la que guardaremos la entrada del usuario.
 
