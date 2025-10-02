@@ -1,0 +1,87 @@
+---
+import Layout from './Layout.astro'
+import Article from '../components/Article.astro'
+
+interface Props {
+  sectionTitle: string
+}
+
+const { sectionTitle } = Astro.props
+---
+
+<Layout>
+  <div class="section">
+    <aside class="section-nav">
+      <h2>{sectionTitle}</h2>
+      <nav>
+        <slot name="section-nav">
+          <ul>
+            <li>No hay nada</li>
+          </ul>
+        </slot>
+      </nav>
+    </aside>
+
+    <div class="content">
+      <Article>
+        <slot />
+      </Article>
+
+      <aside class="content-nav">
+        <h3>En esta pagina</h3>
+        <nav>
+          <slot name="content-nav">
+            <ul>
+              <li>No hay nada</li>
+            </ul>
+          </slot>
+        </nav>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  .section {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  aside.content-nav,
+  aside.section-nav {
+    height: calc(100vh - var(--size-9));
+    position: sticky;
+    top: var(--size-9);
+    overflow-y: auto;
+    min-width: var(--size-11);
+    max-width: var(--size-11);
+    margin: 0 auto;
+    padding: var(--size-3);
+    background: var(--background);
+  }
+
+  aside.section-nav {
+    border-right: var(--primary) var(--size-1) solid;
+  }
+
+  aside.content-nav {
+    border-left: var(--secondary) var(--size-1) solid;
+  }
+
+  @media (width <= 1060px) {
+    aside.section-nav {
+      display: none;
+    }
+  }
+
+  @media (width <= 768px) {
+    aside.content-nav {
+      display: none;
+    }
+  }
+</style>
