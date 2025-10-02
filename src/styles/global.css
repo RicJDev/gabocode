@@ -153,8 +153,7 @@ h3 > code,
 p > code {
   font-size: inherit;
   background: var(--secondary);
-  color: var(--background);
-  border-radius: var(--size-1);
+  padding: var(--size-0);
 }
 
 blockquote {
