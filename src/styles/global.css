@@ -119,11 +119,11 @@ h6 {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #FFFFFF;
+    --text: #ffffff;
     --background: #131417;
-    --primary: #47CF73;
-    --secondary: #2C303A;
-    --accent: #E4D944;
+    --primary: #47cf73;
+    --secondary: #2c303a;
+    --accent: #e4d944;
     --link-hover: #030407;
   }
 }
