@@ -1,25 +1,16 @@
 ---
-import Layout from './Layout.astro'
 import ReferenceList from '../components/ReferenceList.astro'
 import Article from '../components/Article.astro'
+import Section from './Section.astro'
 ---
 
-<Layout>
-  <div>
-    <ReferenceList />
-    <Article>
-      <slot />
-    </Article>
-  </div>
-</Layout>
+<Section sectionTitle='Referencia'>
+  <ReferenceList slot='section-nav' />
+
+  <slot>
+    <Article />
+  </slot>
+</Section>
 
 <style>
-  div {
-    display: flex;
-    flex-direction: row;
-  }
-
-  article {
-    margin: auto;
-  }
 </style>
