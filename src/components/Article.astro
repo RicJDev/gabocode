@@ -17,6 +17,11 @@ import MemeCat from '../images/gato-meme.jpg'
   article {
     max-width: var(--size-15);
     margin: var(--size-4) auto;
+
+    @media (width <= 768px) {
+      max-width: 100vw;
+      padding: 0 var(--size-4);
+    }
   }
 
   img {

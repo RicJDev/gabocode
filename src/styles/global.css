@@ -136,15 +136,10 @@ body {
   font-family: 'Monaspace-Neon', 'Ajusted-Fallback';
 }
 
-h2 {
-  align-self: center;
-}
-
 h2,
 h3,
 h4 {
   width: fit-content;
-  border-bottom: 1px var(--primary) solid;
 }
 
 li > code,
@@ -165,7 +160,6 @@ pre {
   font-family: 'Monaspace-Argon';
   padding: var(--size-2);
   font-size: var(--size-4);
-  align-self: center;
 }
 
 /* Algunas clases utiles */
