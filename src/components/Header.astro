@@ -68,11 +68,11 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
       }
     }
 
-    const $openMenu = document.querySelector('.open-nav')
+    const $openMainNav = document.querySelector('.open-nav')
     const $mainNav = document.querySelector('.main-nav')
 
-    $openMenu?.addEventListener('click', () => {
-      $openMenu.classList.toggle('pressed')
+    $openMainNav?.addEventListener('click', () => {
+      $openMainNav.classList.toggle('pressed')
       $mainNav?.classList.toggle('openned')
     })
   </script>
