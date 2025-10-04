@@ -13,7 +13,7 @@ const { sectionTitle } = Astro.props
 <Layout>
   <span>
     <button class="open-section-nav">
-      <IconLayoutSidebar className='icon' />
+      <IconLayoutSidebar className="icon" />
       <p>{sectionTitle}</p>
     </button>
   </span>
@@ -36,12 +36,12 @@ const { sectionTitle } = Astro.props
   </div>
 
   <script>
-  const $openSectionNav = document.querySelector('.open-section-nav')
-  const $sectionNav = document.querySelector('.section-nav')
+    const $openSectionNav = document.querySelector('.open-section-nav')
+    const $sectionNav = document.querySelector('.section-nav')
 
-  $openSectionNav?.addEventListener('click', () => {
-    $sectionNav?.classList.toggle('oppened')
-  })
+    $openSectionNav?.addEventListener('click', () => {
+      $sectionNav?.classList.toggle('oppened')
+    })
   </script>
 </Layout>
 
@@ -99,7 +99,8 @@ const { sectionTitle } = Astro.props
     width: 100%;
   }
 
-  li, ul {
+  li,
+  ul {
     list-style-type: none;
     padding-inline: 0;
     margin-inline: 0;
