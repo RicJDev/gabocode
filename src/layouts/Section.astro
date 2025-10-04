@@ -13,7 +13,7 @@ const { sectionTitle } = Astro.props
   <div class="section">
     <aside class="section-nav">
       <h2>{sectionTitle}</h2>
-      <nav>
+      <nav class="section-nav">
         <slot name="section-nav">
           <ul>
             <li>No hay nada</li>
@@ -22,65 +22,51 @@ const { sectionTitle } = Astro.props
       </nav>
     </aside>
 
-    <div class="content">
-      <Article>
-        <slot />
-      </Article>
-
-      <aside class="content-nav">
-        <h3>En esta pagina</h3>
-        <nav>
-          <slot name="content-nav">
-            <ul>
-              <li>No hay nada</li>
-            </ul>
-          </slot>
-        </nav>
-      </aside>
-    </div>
+    <Article>
+      <slot />
+    </Article>
   </div>
 </Layout>
 
 <style>
   .section {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
   }
 
-  .content {
-    display: grid;
-    grid-template-columns: 1fr auto;
-  }
-
-  aside.content-nav,
-  aside.section-nav {
+  aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: calc(100vh - var(--size-9));
+    width: var(--size-12);
     position: sticky;
     top: var(--size-9);
     overflow-y: auto;
-    min-width: var(--size-11);
-    max-width: var(--size-11);
-    margin: 0 auto;
-    padding: var(--size-3);
+    padding: var(--size-4);
     background: var(--background);
-  }
-
-  aside.section-nav {
     border-right: var(--primary) var(--size-1) solid;
   }
 
-  aside.content-nav {
-    background: var(--secondary);
+  h2 {
+    color: var(--accent);
+    margin-bottom: var(--size-4);
   }
 
-  @media (width <= 1060px) {
-    aside.section-nav {
-      display: none;
-    }
+  nav {
+    border: var(--size-0) solid var(--primary);
+    border-radius: var(--size-1);
+    padding: var(--size-4);
+    width: 100%;
   }
 
-  @media (width <= 768px) {
-    aside.content-nav {
+  li, ul {
+    list-style-type: none;
+    padding-inline: 0;
+    margin-inline: 0;
+  }
+
+  @media (width <= 970px) {
+    aside {
       display: none;
     }
   }
