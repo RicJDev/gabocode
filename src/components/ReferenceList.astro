@@ -44,10 +44,23 @@ const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.
     text-decoration: none;
     color: inherit;
     border-radius: var(--size-1);
-    padding: var(--size-1);
+    padding: var(--size-2);
   }
 
   a:hover {
     background: var(--link-hover);
+  }
+
+  @media (width <= 970px) {
+    ul {
+      justify-content: center;
+      align-items: center;
+      gap: var(--size-5);
+    }
+
+    a,
+    li {
+      display: inline;
+    }
   }
 </style>
