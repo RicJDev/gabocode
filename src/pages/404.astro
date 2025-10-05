@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Article from '../components/Article.astro'
+import Image404 from '../images/404.jpg'
+---
+
+<Layout>
+  <Article>
+    <h2>¡Eeeeepa, cachorro!</h2>
+    <h3>Obtuviste un 404</h3>
+    <p>Acá no hay nada que ver, mijo</p>
+    <img
+      src={Image404.src}
+      alt='Un gato diciendo "Deja yo me encargo"'
+    />
+  </Article>
+</Layout>
