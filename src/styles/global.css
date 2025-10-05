@@ -167,3 +167,7 @@ pre {
 .stack > * + * {
   margin-block: var(--size-5);
 }
+
+.mini-stack > * + * {
+  margin-block: var(--size-2);
+}
