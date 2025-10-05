@@ -10,8 +10,8 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
     <h1>Gabocode</h1>
   </a>
 
-  <nav class="main-nav mini-stack">
-    <ul class="mini-stack">
+  <nav class="main-nav">
+    <ul>
       <li>
         <a
           class="nav-link"
@@ -50,7 +50,7 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
   </nav>
 
   <button class="open-nav">
-    <IconMenu2 className="icon" />
+    <IconMenu2 className="open-nav__icon" />
   </button>
 
   <script>
@@ -110,8 +110,6 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
 
   button {
     border: 0;
-    border: solid var(--size-1);
-    border-radius: var(--size-1);
     background: inherit;
     color: var(--accent);
     display: none;
@@ -160,6 +158,11 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
     height: var(--size-5);
   }
 
+  .open-nav__icon {
+    width: var(--size-6);
+    height: var(--size-6);
+  }
+
   @media (width <= 768px) {
     button {
       display: block;
@@ -187,6 +190,10 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
 
     a.nav-link {
       flex-direction: row;
+    }
+
+    ul > * + * {
+      margin-block: var(--size-2);
     }
   }
 </style>
