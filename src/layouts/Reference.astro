@@ -7,9 +7,9 @@ import Section from './Section.astro'
 <Section sectionTitle="Referencia">
   <ReferenceList slot="section-nav" />
 
-  <Article>
-    <slot />
-  </Article>
+  <slot>
+    <Article />
+  </slot>
 </Section>
 
 <style is:global>
