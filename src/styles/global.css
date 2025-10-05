@@ -157,7 +157,7 @@ blockquote {
 }
 
 pre {
-  font-family: 'Monaspace-Argon';
+  font-family: 'Monaspace-Argon', 'Courier New', Courier, monospace;
   padding: var(--size-2);
   font-size: var(--size-4);
 }
