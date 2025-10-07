@@ -65,6 +65,10 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
 </header>
 
 <style>
+  :root {
+    --header-height: var(--size-9);
+  }
+
   a {
     text-decoration: none;
     color: inherit;
@@ -126,7 +130,7 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     position: sticky;
     z-index: 9;
     top: 0;
@@ -146,12 +150,12 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
   }
 
   @media (width <= 840px) {
-    button {
-      display: block;
+    :root {
+      --header-height: var(--size-8);
     }
 
-    header {
-      align-items: center;
+    button {
+      display: block;
     }
 
     nav {
