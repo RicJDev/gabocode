@@ -1,0 +1,19 @@
+.header-open-button {
+  display: none;
+}
+
+@media (width <= 840px) {
+  .header-open-button {
+    display: block;
+  }
+}
+
+.sidebar-open-button {
+  display: none;
+}
+
+@media (width <= 970px) {
+  .sidebar-open-button {
+    display: block;
+  }
+}
