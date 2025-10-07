@@ -54,20 +54,6 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
   </button>
 
   <script>
-    const $navLinks: NodeListOf<HTMLLinkElement> = document.querySelectorAll('.nav-link')
-    const location = window.location.pathname
-
-    if (location != '/gabocode') {
-      for (const $navLink of $navLinks) {
-        const linkHref = $navLink.href
-        const localPath = location.match(/\/gabocode\/[^\/]+/g) ?? ['']
-
-        if (new RegExp(localPath[0]).test(linkHref)) {
-          $navLink.classList.toggle('focused')
-        }
-      }
-    }
-
     const $openMainNav = document.querySelector('.open-nav')
     const $mainNav = document.querySelector('.main-nav')
 
@@ -104,10 +90,6 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
     margin-left: 0;
   }
 
-  a.focused {
-    color: var(--accent);
-  }
-
   button {
     border: 0;
     background: inherit;
@@ -138,8 +120,8 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
 
   header {
     width: 100%;
-    height: var(--size-9);
-    padding: var(--size-5);
+    height: var(--header-height);
+    padding: 0 var(--size-3); 
 
     display: flex;
     flex-direction: row;
@@ -174,7 +156,7 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
 
     nav {
       position: fixed;
-      top: var(--size-9);
+      top: var(--header-height);
       padding: var(--size-4);
       width: 100%;
       right: -100%;
