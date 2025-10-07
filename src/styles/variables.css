@@ -1,0 +1,45 @@
+:root {
+  --size-0: 1px;
+  --size-1: 4px;
+  --size-2: 8px;
+  --size-3: 12px;
+  --size-4: 16px;
+  --size-5: 24px;
+  --size-6: 32px;
+  --size-7: 48px;
+  --size-8: 64px;
+  --size-9: 96px;
+  --size-10: 128px;
+  --size-11: 192px;
+  --size-12: 256px;
+  --size-13: 384px;
+  --size-14: 512px;
+  --size-15: 640px;
+  --size-16: 768px;
+}
+
+:root {
+  --header-height: var(--size-8);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: #000000;
+    --background: #e9eaed;
+    --primary: #2fb65a;
+    --secondary: #c5c9d3;
+    --accent: #bbb11b;
+    --link-hover: #f9fafd;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #ffffff;
+    --background: #131417;
+    --primary: #47cf73;
+    --secondary: #2c303a;
+    --accent: #e4d944;
+    --link-hover: #030407;
+  }
+}
