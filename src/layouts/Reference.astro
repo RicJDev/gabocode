@@ -14,7 +14,10 @@ const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.
 ---
 
 <Section sectionTitle="Referencia">
-  <List list={posts} slot="section-nav" />
+  <List
+    list={posts}
+    slot="section-nav"
+  />
 
   <slot>
     <Article />
