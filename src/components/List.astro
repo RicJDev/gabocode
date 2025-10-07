@@ -1,18 +1,21 @@
 ---
 import type { MarkdownInstance } from 'astro'
 
-interface Fronmatter {
+export interface Fronmatter {
   title: string
   index: number
 }
 
-const matches = import.meta.glob<MarkdownInstance<Fronmatter>>('../pages/referencia/*.md', { eager: true })
-const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.frontmatter.index)
+interface Props {
+  list: MarkdownInstance<Fronmatter>[]
+}
+
+const { list } = Astro.props
 ---
 
 <ul>
   {
-    posts.map((post) => (
+    list.map((post) => (
       <li>
         <a href={post?.url}>{post.frontmatter.title}</a>
       </li>
@@ -44,10 +47,23 @@ const posts = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.
     text-decoration: none;
     color: inherit;
     border-radius: var(--size-1);
-    padding: var(--size-1);
+    padding: var(--size-2);
   }
 
   a:hover {
     background: var(--link-hover);
+  }
+
+  @media (width <= 970px) {
+    ul {
+      justify-content: center;
+      align-items: center;
+      gap: var(--size-5);
+    }
+
+    a,
+    li {
+      display: inline;
+    }
   }
 </style>

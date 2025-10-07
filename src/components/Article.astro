@@ -13,13 +13,34 @@ import MemeCat from '../images/gato-meme.jpg'
   </slot>
 </article>
 
+<style is:global>
+  article h2 {
+    align-self: center;
+    text-align: center;
+    margin: auto;
+    color: var(--primary);
+    max-width: var(--size-13);
+  }
+
+  article h3 {
+    border-bottom: var(--secondary) solid var(--size-0);
+    width: fit-content;
+  }
+
+  article a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: var(--accent) solid var(--size-0);
+  }
+</style>
+
 <style>
   article {
     max-width: var(--size-15);
     margin: var(--size-4) auto;
 
     @media (width <= 680px) {
-      max-width: calc(100vw - var(--size-6));
+      max-width: calc(100vw - var(--size-5));
       padding: 0 var(--size-2);
     }
   }
