@@ -12,11 +12,13 @@ interface Fronmatter {
 const matches = import.meta.glob<MarkdownInstance<Fronmatter>>('../pages/ejercicios/*.md', { eager: true })
 const exercises = Object.values(matches).toSorted((a, b) => a.frontmatter.index - b.frontmatter.index)
 ---
-<Section sectionTitle='Ejercicios'>
-  <List list={exercises} slot='section-nav' />
+
+<Section sectionTitle="Ejercicios">
+  <List
+    list={exercises}
+    slot="section-nav"
+  />
   <slot>
-    <Article/>
+    <Article />
   </slot>
 </Section>
-
-

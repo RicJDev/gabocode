@@ -39,7 +39,6 @@ const { list } = Astro.props
   li {
     display: block;
     width: fit-content;
-    text-align: left;
   }
 
   a {
@@ -57,13 +56,12 @@ const { list } = Astro.props
   @media (width <= 970px) {
     ul {
       justify-content: center;
-      align-items: center;
-      gap: var(--size-5);
+      gap: var(--size-4);
     }
 
     a,
     li {
-      display: inline;
+      display: block;
     }
   }
 </style>
