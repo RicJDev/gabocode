@@ -38,11 +38,9 @@ const { list } = Astro.props
   a,
   li {
     display: block;
-    width: fit-content;
   }
 
   a {
-    max-width: min-content;
     text-decoration: none;
     color: inherit;
     border-radius: var(--size-1);
@@ -57,11 +55,6 @@ const { list } = Astro.props
     ul {
       justify-content: center;
       gap: var(--size-4);
-    }
-
-    a,
-    li {
-      display: block;
     }
   }
 </style>
