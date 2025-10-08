@@ -59,7 +59,7 @@ Si (<condicion 1>) Entonces;
           Si (<condicion n>) Entonces;
             // Y con la cantidad de condiciones que quieras
 
-          Sino 
+          Sino
             // También puede suceder que ninguna sea verdadera
             // Y termina ejecuntándose esto
 
@@ -82,7 +82,7 @@ Cabe destacar que un grupo funciona como elemento. Los mismos agrupamientos que 
 
 Tenemos dos tipos: los lógicos y los de comparación.
 
-#### Operadores lógicos 
+#### Operadores lógicos
 
 Permiten hacer combinaciones de valores de verdad. Solo hay dos, `And` y `Or`.
 
@@ -117,7 +117,7 @@ Donde `1` es verdadero y `0` es falso.
 
 #### Operadores de comparación
 
-Permiten comparar números. Son una herencia de las matemáticas, en las que existen estos mismos operadores. Son seis en total: 
+Permiten comparar números. Son una herencia de las matemáticas, en las que existen estos mismos operadores. Son seis en total:
 
 - Mayor que. `>`
 - Menor que. `<`
@@ -207,7 +207,7 @@ Cree un algoritmo que solicite dos números y calcule la raíz en la que el prim
 
 Analicemos el problema un momento.
 
-Obviamente usaremos el truco matemático para calcular raíces. También debemos revisar que el índice no sea un número menor a 1 y que el radicando no sea menor a 0 (o la operación no podría hacerse). Haremos estas validaciones una vez el usuario haya ingresado los datos, por lo que usaremos los comandos `Mostrar` y `Leer`. 
+Obviamente usaremos el truco matemático para calcular raíces. También debemos revisar que el índice no sea un número menor a 1 y que el radicando no sea menor a 0 (o la operación no podría hacerse). Haremos estas validaciones una vez el usuario haya ingresado los datos, por lo que usaremos los comandos `Mostrar` y `Leer`.
 
 Y ahora crearemos nuestro `Algoritmo Calculadora` usando ambos enfoques. Los dos algoritmos hacen lo mismo, pero fíjate en la condición evaluada en cada uno y en cómo cambia la estructura del código.
 
@@ -276,4 +276,3 @@ Si en cambio tu solución requiere que te centres en las condiciones ideales par
 Al final todo dependerá del problema y de la solución que estés diseñando para resolverlo. Y a veces será una cuestión de legibilidad, ya que el enfoque cambia cómo se lee y entiende el código.
 
 Lo importante acá es entender ambos enfoques e ir practicando con ellos para que con la experiencia puedas decidir cuál es el mejor para la situación a la que te estés enfrentando.
-
