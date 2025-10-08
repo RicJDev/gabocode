@@ -1,37 +1,46 @@
 ---
 layout: ../../layouts/Reference.astro
-title: Estructuras de control
+title: Control del flujo
 index: 4
 ---
 
-## Estructura condicional `Si-Entonces`
+## Control del flujo del programa
 
-Esta estructura nos permite actuar tomando decisiones.
+### Estructuras de control
 
-### Simple
+Una estructura de control es aquella que nos permite controlar el flujo de la ejecución, basándonos en condiciones. Esto permite que nuestro programa pueda "decidir" qué hacer según los escenarios que programemos.
+
+### Estructura condicional `Si-Entonces`
+
+Esta es la estructura de control por excelencia. Evalúa condiciones y actúa en consecuencia de ellas.
+
+Existe tres maneras de usar esta estructura, las cuales dependen de la cantidad de escenarios que estamos evaluando.
+
+**Simple:** Un único escenario. Evaluamos que la condición se cumpla.
 
 ```gabo
 Si (<condicion>) Entonces;
   // Esto se ejecuta si la condicion es cierta
+  // De lo contrario se ignora
 
   // ...
 Fin_Si
 ```
 
-### Doble
+**Doble:** Dos escenarios posibles. Hay una acción para cuando la condición es verdadera y una para cuando es falsa.
 
 ```gabo
-Si (<condicion 1>) Entonces;
-  // Esto se ejecuta si la condicion 1 es cierta
+Si (<condicion>) Entonces;
+  // Esto se ejecuta si la condicion es cierta
 
   Sino
-    // Esto se ejecuta si la condicion 1 es falsa
+    // Esto se ejecuta si la condicion es falsa
 
     // ...
 Fin_Si
 ```
 
-### Multiple
+**Múltiple:** Evaluamos tres o más escenarios. Al no cumplirse una condición buscamos averiguar si otra podría ser cierta. Esto se logra anidando la misma estructura pero con condiciones diferentes.
 
 ```gabo
 Si (<condicion 1>) Entonces;
@@ -39,7 +48,8 @@ Si (<condicion 1>) Entonces;
 
   Sino
     Si (<condicion 2>) Entonces;
-    // Esto se ejecuta si la condicion 2 es cierta
+    // Esto se ejecuta si la condicion 1 es falsa
+    // y la condicion 2 es verdadera
 
     Sino
       Si (<condicion 3>) Entonces;
@@ -49,6 +59,10 @@ Si (<condicion 1>) Entonces;
           Si (<condicion n>) Entonces;
             // Y con la cantidad de condiciones que quieras
 
+          Sino 
+            // También puede suceder que ninguna sea verdadera
+            // Y termina ejecuntándose esto
+
             // ...
           Fin_Si
       Fin_Si
@@ -56,13 +70,21 @@ Si (<condicion 1>) Entonces;
 Fin_Si
 ```
 
-## Operadores
+> IMPORTANTE: cierra todas tus estructuras condicionales. Si falta algún `Fin_Si` tendrás un error de sintaxis y el código no funcionará.
 
-Estos son simbolos que permiten obtener valores de verdad (verdadero o falso) al aplicarlos a dos elementos. Dicho resultado se obtiene de combinar valores de verdad o de realizar comparaciones entre los elementos
+### Operadores utilizados en condicionales
 
-### Logicos
+Estos son símbolos que permiten obtener valores de verdad (verdadero o falso). Funcionan poniendo el operador entre dos elementos, razón por la cual se les conoce también como **operadores binarios**.
 
-Permiten hacer combinaciones de valores de verdad.
+Cabe destacar que un grupo funciona como elemento. Los mismos agrupamientos que se hacen en la sección anterior con las operaciones matemáticas se pueden hacer con estos operadores.
+
+> En programación existen, además, operadores unarios y ternarios. Pero Gabocode solo posee operadores binarios.
+
+Tenemos dos tipos: los lógicos y los de comparación.
+
+#### Operadores lógicos 
+
+Permiten hacer combinaciones de valores de verdad. Solo hay dos, `And` y `Or`.
 
 ```gabo
 var a, b: Booleano;
@@ -82,7 +104,7 @@ Si (a Or b) Entonces;
 Fin_Si
 ```
 
-Estan muy relacionados a la tabla de la verdad:
+Estos operadores están muy relacionados con la tabla de la verdad:
 
 | a   | b   | a And b | a Or b |
 | --- | --- | ------- | ------ |
@@ -93,7 +115,18 @@ Estan muy relacionados a la tabla de la verdad:
 
 Donde `1` es verdadero y `0` es falso.
 
-### De comparacion
+#### Operadores de comparación
+
+Permiten comparar números. Son una herencia de las matemáticas, en las que existen estos mismos operadores. Son seis en total: 
+
+- Mayor que. `>`
+- Menor que. `<`
+- Mayor o igual que. `>=`
+- Menor o igual que. `<=`
+- Igual a. `=`
+- Desigual de. `!=`
+
+Veamos ejemplos de cómo se usa cada uno.
 
 **Mayor que y menor que**
 
@@ -160,141 +193,87 @@ Si (a <= b) Entonces;
 Fin_Si
 ```
 
-## Trabajando con condicionales
+### Trabajando con condicionales
 
-Usaremos el mismo enunciado para mostrar dos enfoques a la hora de validar con condicionales.
+Usaremos un mismo enunciado para mostrar los dos enfoques a la hora de trabajar condiciones: el **camino feliz** y el **camino triste**.
 
-**ENUNCIADO:**
+---
 
-Cree un algoritmo que solicite dos numeros y calcule la raiz con el primer numero como indice y el segundo numero como radicando. Tome en cuenta que no se admiten numeros negativos para el calculo
+**Enunciado:**
 
-Y ahora veremos como seria nuestro `Algoritmo Calculadora`. Notese que hay operadores que son ideales segun se use uno u otro enfoque
+Cree un algoritmo que solicite dos números y calcule la raíz en la que el primer número es el índice y el segundo número es el radicando. Tome en cuenta que no se admiten números negativos para el cálculo
 
-### Camino Feliz :D
+---
 
-Te enfocas en lo que quieres que sea verdadero, bueno o valido
+Analicemos el problema un momento.
 
-```gabo
-var indice: Entero;
-var radicando, resultado: Real;
+Obviamente usaremos el truco matemático para calcular raíces. También debemos revisar que el índice no sea un número menor a 1 y que el radicando no sea menor a 0 (o la operación no podría hacerse). Haremos estas validaciones una vez el usuario haya ingresado los datos, por lo que usaremos los comandos `Mostrar` y `Leer`. 
 
-Mostrar << "Ingrese el indice de la raiz";
-Leer >> indice;
-Mostrar << "Ingrese el radicando de la raiz";
-Leer >> radicando;
+Y ahora crearemos nuestro `Algoritmo Calculadora` usando ambos enfoques. Los dos algoritmos hacen lo mismo, pero fíjate en la condición evaluada en cada uno y en cómo cambia la estructura del código.
 
-Si (indice >= 1 And radicando >= 0) Entonces;
-  resultado = radicando ^ (1 / indice);
+#### Camino Feliz o Happy path
 
-  Mostrar << "La raiz es igual a ", resultado;
-
-  Sino
-    Mostrar << "Datos no validos para la operacion";
-Fin_Si
-```
-
-### Camino Triste :(
-
-Te enfocas en lo que puede que sea falso, malo o invalido
+Te enfocas en lo que quieres que sea verdadero, bueno o válido.
 
 ```gabo
-var indice: Entero;
-var radicando, resultado: Real;
+Algoritmo Calculadora
+Inicio
+  // :D
+  var indice: Entero;
+  var radicando, resultado: Real;
 
-Mostrar << "Ingrese el indice de la raiz";
-Leer >> indice;
-Mostrar << "Ingrese el radicando de la raiz";
-Leer >> radicando;
+  Mostrar << "Ingrese el indice de la raiz";
+  Leer >> indice;
+  Mostrar << "Ingrese el radicando de la raiz";
+  Leer >> radicando;
 
-Si (indice < 1 Or radicando < 0) Entonces;
-  Mostrar << "Datos no validos para la operacion";
-
-  Sino
+  Si (indice >= 1 And radicando >= 0) Entonces;
     resultado = radicando ^ (1 / indice);
 
     Mostrar << "La raiz es igual a ", resultado;
-Fin_Si
-```
-
-### Ejercicio de los dados
-
-Se necesita un algoritmo que solicite los numeros de tres dados y muestre un mensaje dependiendo de la cantidad de 6 obtenidos:
-
-- 6 en los tres dados: "Excelente"
-- 6 en dos dados: "Muy bien"
-- 6 en un solo dado: "Regular"
-- Ningun 6: "Pesimo"
-
-Esto solo debe realizarse con datos previamente validados. En caso de haber datos invalidos, notificar al usuario y finalizar el programa
-
-```gabo
-Algoritmo Armemos_un_casino_y_hagamonos_ricos
-Inicio
-  var dado1, dado2, dado3: Entero;
-
-  Mostrar << "Ingrese el dado 1";
-  Leer >> dado1; // 5
-  Mostrar << "Ingrese el dado 2";
-  Leer >> dado2; // 4
-  Mostrar << "Ingrese el dado 3";
-  Leer >> dado3; // 4
-
-  Si (dado1 < 1) Or (dado1 > 6) Or (dado2 < 1) Or (dado2 > 6) Or (dado3 < 1) Or (dado3 > 6) Entonces;
-    Mostrar << "Datos invalidos. Solo puedes ingresar numeros del 1 al 6";
-
-    Sino Si (dado1 = 6 And dado2 = 6 And dado3 = 6) Entonces;
-      Mostrar << "Excelente";
-
-      Sino Si (dado1 = 6 And dado2 = 6) Or (dado2 = 6 And dado3 = 6) Or (dado1 = 6 And dado3 = 6) Entonces;
-        Mostrar << "Muy bien";
-
-        Sino Si (dado1 = 6 Or dado2 = 6 Or dado3 = 6) Entonces;
-          Mostrar << "Regular";
-
-          Sino
-            Mostrar << "Pesimo";
-          Fin_Si
-      Fin_Si
-    Fin_Si
-  Fin_Si
-Fin
-```
-
-### Ejercicio del carnet
-
-Desarrolle un algoritmo que aplique un 10% de descuento en la compra de un usuario, en caso de poseer carnet de membresia. No olvide solicitar el nombre del mismo y validar el monto de la compra
-
-```gabo
-Algoritmo Golden_Member
-Inicio
-  var nombre: Cadena;
-  var tiene_carnet: Booleano;
-  var monto_compra, descuento, monto_final: Real;
-
-  Mostrar << "Ingrese el nombre del usuario";
-  Leer >> nombre;
-  Mostrar << "Ingrese el monto de la compra";
-  Leer >> monto_compra;
-  Mostrar << "¿Posee el usuario carnet de membresia? (0: no, 1: si)";
-  Leer >> tiene_carnet;
-
-  Si (monto_compra > 0) Entonces;
-    Si (tiene_carnet = 1) Entonces;
-      descuento = (monto_compra * 10) / 100;
-      monto_final = monto_compra - descuento;
-
-      Mostrar << "El usuario ", nombre, " es miembro. Se le ha aplicado un 10% de descuento";
-      Mostrar << "Monto de la compra: ", monto_compra;
-      Mostrar << "Monto a pagar: ", monto_final;
-
-      Sino
-        Mostrar << "El usuario ", nombre, " no es miembro. No se le ha aplicado ningun descuento";
-        Mostrar << "Monto a pagar: ", monto_compra;
-    Fin_Si
 
     Sino
-      Mostrar << "Ha ingresado un monto invalido";
+      Mostrar << "Datos no validos para la operacion";
   Fin_Si
 Fin
 ```
+
+#### Camino Triste o Unhappy path
+
+Te enfocas en lo que puede que sea falso, malo o inválido.
+
+```gabo
+Algoritmo Calculadora
+Inicio
+  // :(
+  var indice: Entero;
+  var radicando, resultado: Real;
+
+  Mostrar << "Ingrese el indice de la raiz";
+  Leer >> indice;
+  Mostrar << "Ingrese el radicando de la raiz";
+  Leer >> radicando;
+
+  Si (indice < 1 Or radicando < 0) Entonces;
+    Mostrar << "Datos no validos para la operacion";
+
+    Sino
+      resultado = radicando ^ (1 / indice);
+
+      Mostrar << "La raiz es igual a ", resultado;
+  Fin_Si
+Fin
+```
+
+#### ¿Cuándo usar uno y cuándo usar otro?
+
+Mmmm... depende.
+
+Si necesitas que tu solución se enfoque en los posibles errores o situaciones en las que algo podría salir mal, entonces ve por el camino triste.
+
+Si en cambio tu solución requiere que te centres en las condiciones ideales para lograr la funcionalidad esperada, ve por el camino feliz.
+
+Al final todo dependerá del problema y de la solución que estés diseñando para resolverlo. Y a veces será una cuestión de legibilidad, ya que el enfoque cambia cómo se lee y entiende el código.
+
+Lo importante acá es entender ambos enfoques e ir practicando con ellos para que con la experiencia puedas decidir cuál es el mejor para la situación a la que te estés enfrentando.
 
