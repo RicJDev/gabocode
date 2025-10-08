@@ -50,3 +50,23 @@ pre {
   padding: var(--size-2);
   font-size: var(--size-4);
 }
+
+thead {
+  background: var(--secondary);
+}
+
+th,
+td {
+  text-align: center;
+  vertical-align: top;
+  padding: var(--size-3);
+  border: var(--size-0) solid var(--secondary);
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: var(--size-0) solid var(--secondary);
+}
