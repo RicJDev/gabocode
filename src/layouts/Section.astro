@@ -30,6 +30,8 @@ const { sectionTitle } = Astro.props
       </nav>
     </aside>
 
+    <div class="blur-screen"></div>
+
     <Article>
       <slot />
     </Article>
@@ -38,9 +40,12 @@ const { sectionTitle } = Astro.props
   <script>
     const $openSectionNav = document.querySelector('.open-section-nav')
     const $sectionNav = document.querySelector('.section-nav')
+    const $blurScreen = document.querySelector('.blur-screen')
 
     $openSectionNav?.addEventListener('click', () => {
       $sectionNav?.classList.toggle('oppened')
+      $openSectionNav?.classList.toggle('oppened')
+      $blurScreen?.classList.toggle('oppened')
     })
   </script>
 </Layout>
@@ -55,18 +60,30 @@ const { sectionTitle } = Astro.props
     height: var(--size-6);
   }
 
+  .open-section-nav p {
+    color: var(--text)
+  }
+
   span {
     display: none;
     background: var(--background);
-    border-bottom: var(--size-1) var(--secondary) solid;
+    border-bottom: var(--size-0) var(--secondary) solid;
   }
 
   button {
     border: 0;
     background: var(--background);
-    color: var(--accent);
+    color: var(--secondary);
     width: fit-content;
     height: fit-content;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  button.oppened {
+    color: var(--accent);
   }
 
   aside {
@@ -80,7 +97,7 @@ const { sectionTitle } = Astro.props
     overflow-y: auto;
     padding: var(--size-4);
     background: var(--background);
-    border-right: var(--primary) var(--size-1) solid;
+    border-right: var(--secondary) solid var(--size-0);
   }
 
   aside.oppened {
@@ -106,12 +123,16 @@ const { sectionTitle } = Astro.props
     margin-inline: 0;
   }
 
+  nav * {
+    margin: auto;
+    padding: 0;
+  }
+
   @media (width <= 970px) {
     aside {
       position: fixed;
       top: calc(var(--header-height) + var(--size-7));
       padding: var(--size-4);
-      width: 100%;
       left: -100%;
       height: 100%;
       z-index: 8;
@@ -136,6 +157,20 @@ const { sectionTitle } = Astro.props
       align-items: center;
       gap: var(--size-2);
       margin: auto 0;
+    }
+
+    .blur-screen {
+      position: fixed;
+      top: calc(var(--header-height) + var(--size-7));
+      height: 100vh;
+      width: 100vw;
+      z-index: -1;
+      transition: backdrop-filter 200ms ease-in;
+    }
+
+    .blur-screen.oppened {
+      backdrop-filter: blur(var(--size-1));
+      z-index: 7;
     }
   }
 </style>
