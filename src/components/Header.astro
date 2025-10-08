@@ -125,7 +125,7 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
   header {
     width: 100%;
     height: var(--header-height);
-    padding: 0 var(--size-3);
+    padding: 0 var(--size-6);
 
     display: flex;
     flex-direction: row;
@@ -136,7 +136,7 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
     top: 0;
 
     background: var(--background);
-    border-bottom: var(--size-1) solid var(--primary);
+    border-bottom: var(--primary) solid var(--size-0);
   }
 
   .icon {
@@ -154,6 +154,10 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
       --header-height: var(--size-8);
     }
 
+    header {
+      padding: 0 var(--size-5);
+    }
+
     button {
       display: block;
     }
@@ -162,7 +166,7 @@ import { IconMenu2, IconBook, IconBarbell } from '@tabler/icons-react'
       position: fixed;
       top: var(--header-height);
       padding: var(--size-4);
-      width: 100%;
+      width: var(--size-12);
       right: -100%;
       height: 100%;
       z-index: 10;
